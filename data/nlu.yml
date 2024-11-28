@@ -1,0 +1,152 @@
+version: "3.1"
+
+nlu:
+- lookup: vehicle_information
+  examples: |
+    - 100hp
+    - 125hp
+    - 150hp
+    - Vàng
+    - Đỏ
+    - Xanh
+    - Trắng
+    - Tiêu chuẩn
+    - Đặc biệt
+    - Cao Cấp
+    - Honda
+    - Yamaha
+    - Suzuki
+    - Có phanh ABS
+    - Không phanh ABS
+    - 50km/l
+    - 60km/l
+    - Winner X
+    - Vision
+    - SH Mode
+    - Exciter
+    - Sirius
+    - Raider
+    - Bảo hành 1 năm
+    - Bảo hành 2 năm
+
+
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+
+- intent: provide_vehicle_information
+  examples: |
+    - Tôi cần xe có công suất [100hp](vehicle_information).
+    - Tôi muốn xe có công suất [125hp](vehicle_information).
+    - Tôi cần xe có công suất [150hp](vehicle_information).
+    - Tôi muốn xe màu [Vàng](vehicle_information).
+    - Tôi đang tìm xe màu [Đỏ](vehicle_information).
+    - Tôi cần xe màu [Xanh](vehicle_information).
+    - Tôi muốn xe màu [Trắng](vehicle_information).
+    - Tôi muốn xe phiên bản [Tiêu chuẩn](vehicle_information).
+    - Tôi đang tìm xe phiên bản [Đặc biệt](vehicle_information).
+    - Tôi cần xe phiên bản [Cao Cấp](vehicle_information).
+    - Tôi muốn xe của hãng [Honda](vehicle_information).
+    - Tôi muốn xe của hãng [Yamaha](vehicle_information).
+    - Tôi cần xe của hãng [Suzuki](vehicle_information).
+    - Tôi cần xe [Có phanh ABS](vehicle_information).
+    - Tôi muốn xe [Có phanh ABS](vehicle_information).
+    - Tôi cần xe [Không phanh ABS](vehicle_information).
+    - Tôi muốn xe [Không phanh ABS](vehicle_information).
+    - Tôi muốn xe có [50km/l](vehicle_information).
+    - Tôi cần xe có mức tiêu thụ [60km/l](vehicle_information).
+    - Tôi muốn xe [Winner X](vehicle_information).
+    - Tôi đang tìm xe [Vision](vehicle_information).
+    - Tôi cần xe [SH Mode](vehicle_information).
+    - Tôi muốn xe [Exciter](vehicle_information).
+    - Tôi cần xe [Sirius](vehicle_information).
+    - Tôi muốn xe [Raider](vehicle_information).
+    - Tôi muốn xe có [Bảo hành 1 năm](vehicle_information).
+    - Tôi cần xe có [Bảo hành 2 năm](vehicle_information).
+
