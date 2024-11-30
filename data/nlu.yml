@@ -3,31 +3,41 @@ version: "3.1"
 nlu:
 - lookup: vehicle_information
   examples: |
-    - 100hp
-    - 125hp
-    - 150hp
-    - Vàng
-    - Đỏ
-    - Xanh
-    - Trắng
-    - Tiêu chuẩn
-    - Đặc biệt
-    - Cao Cấp
-    - Honda
-    - Yamaha
-    - Suzuki
-    - Có phanh ABS
-    - Không phanh ABS
-    - 50km/l
-    - 60km/l
-    - Winner X
-    - Vision
-    - SH Mode
-    - Exciter
-    - Sirius
-    - Raider
-    - Bảo hành 1 năm
-    - Bảo hành 2 năm
+    - 100 phân khối
+    - 125 phân khối
+    - 150 phân khối
+    - đen
+    - vàng
+    - đỏ
+    - xanh
+    - trắng
+    - xám
+    - cam
+    - tím
+    - tiêu chuẩn
+    - đặc biệt
+    - cao cấp
+    - honda
+    - yamaha
+    - suzuki
+    - wave rsx
+    - future
+    - winner x
+    - vision
+    - sh mode
+    - exciter
+    - sirius
+    - raider
+    - có phanh abs
+    - không phanh abs
+    - 2 lít
+    - 2.5 lít 
+    - bảo hành 1 năm
+    - bảo hành 2 năm
+    - xe tay ga
+    - xe côn tay
+    - xe số
+
 
 
 - intent: greet
@@ -122,31 +132,305 @@ nlu:
 
 - intent: provide_vehicle_information
   examples: |
-    - Tôi cần xe có công suất [100hp](vehicle_information).
-    - Tôi muốn xe có công suất [125hp](vehicle_information).
-    - Tôi cần xe có công suất [150hp](vehicle_information).
-    - Tôi muốn xe màu [Vàng](vehicle_information).
-    - Tôi đang tìm xe màu [Đỏ](vehicle_information).
-    - Tôi cần xe màu [Xanh](vehicle_information).
-    - Tôi muốn xe màu [Trắng](vehicle_information).
-    - Tôi muốn xe phiên bản [Tiêu chuẩn](vehicle_information).
-    - Tôi đang tìm xe phiên bản [Đặc biệt](vehicle_information).
-    - Tôi cần xe phiên bản [Cao Cấp](vehicle_information).
-    - Tôi muốn xe của hãng [Honda](vehicle_information).
-    - Tôi muốn xe của hãng [Yamaha](vehicle_information).
-    - Tôi cần xe của hãng [Suzuki](vehicle_information).
-    - Tôi cần xe [Có phanh ABS](vehicle_information).
-    - Tôi muốn xe [Có phanh ABS](vehicle_information).
-    - Tôi cần xe [Không phanh ABS](vehicle_information).
-    - Tôi muốn xe [Không phanh ABS](vehicle_information).
-    - Tôi muốn xe có [50km/l](vehicle_information).
-    - Tôi cần xe có mức tiêu thụ [60km/l](vehicle_information).
-    - Tôi muốn xe [Winner X](vehicle_information).
-    - Tôi đang tìm xe [Vision](vehicle_information).
-    - Tôi cần xe [SH Mode](vehicle_information).
-    - Tôi muốn xe [Exciter](vehicle_information).
-    - Tôi cần xe [Sirius](vehicle_information).
-    - Tôi muốn xe [Raider](vehicle_information).
-    - Tôi muốn xe có [Bảo hành 1 năm](vehicle_information).
-    - Tôi cần xe có [Bảo hành 2 năm](vehicle_information).
+    
+    - Tôi cần xe có công suất [100 phân khối](vehicle_information).
+    - Tôi muốn xe có công suất [125cc](vehicle_information).
+    - Tôi đang tìm xe với công suất [150 phân khối](vehicle_information).
+    - Tôi thích xe [100 phân khối](vehicle_information).
+    - Xe tôi muốn cần công suất [125 cc](vehicle_information).
+    - Tôi cần xe 100 phân khối [100cc](vehicle_information).
+    - Tôi muốn xe phân khối là [150 phân khối](vehicle_information).
 
+    
+    - Tôi cần xe màu [vàng](vehicle_information).
+    - Tôi muốn xe có màu [đỏ](vehicle_information).
+    - Tôi đang tìm xe màu [xanh](vehicle_information).
+    - Tôi muốn một chiếc xe màu [trắng](vehicle_information).
+    - Tôi thích xe có màu [xám](vehicle_information).
+    - Xe tôi cần có màu [tím](vehicle_information).
+
+   
+    - Tôi muốn xe phiên bản [tiêu chuẩn](vehicle_information).
+    - Tôi đang tìm xe phiên bản [đặc biệt](vehicle_information).
+    - Tôi cần xe phiên bản [cao cấp](vehicle_information).
+
+
+    - Tôi muốn xe của hãng [honda](vehicle_information).
+    - Tôi cần xe của hãng [yamaha](vehicle_information).
+    - Tôi thích xe thuộc hãng [suzuki](vehicle_information).
+
+  
+    - Tôi cần xe [có phanh abs](vehicle_information).
+    - Tôi muốn xe có [phanh abs](vehicle_information).
+    - Xe không cần phanh abs, tôi muốn xe [không phanh abs](vehicle_information).
+    - Tôi cần xe [không phanh abs](vehicle_information).
+
+    
+    - Tôi muốn xe tốn [2 lít](vehicle_information) đi được 100km.
+    - Tôi cần xe tiêu thụ khoảng [2.5 lít](vehicle_information) nhiên liệu cho mỗi 100km.
+    - Tôi muốn xe [2 lít/100km](vehicle_information).
+    - Tôi cần xe đi được 100km với [2 lít](vehicle_information).
+    - Tôi đang tìm xe đi 100km tốn [2.5 lít](vehicle_information).
+    - Xe tôi muốn có mức tiêu thụ là [2.5 lít/100km](vehicle_information).
+
+    
+    - Tôi muốn xe [winner x](vehicle_information).
+    - Tôi cần một chiếc xe như [vision](vehicle_information).
+    - Tôi đang tìm dòng xe [sh mode](vehicle_information).
+    - Tôi thích xe dòng [exciter](vehicle_information).
+    - Tôi muốn xe như [sirius](vehicle_information).
+    - Tôi đang cần xe dòng [raider](vehicle_information).
+    - Tôi cần xe như [wave rsx](vehicle_information).
+    - Tôi muốn mua xe [future](vehicle_information).
+
+    
+    - Tôi muốn xe có [bảo hành 1 năm](vehicle_information).
+    - Tôi cần xe với [bảo hành 2 năm](vehicle_information).
+    - Tôi thích xe được bảo hành [1 năm](vehicle_information).
+    - Xe tôi muốn phải có [bảo hành 2 năm](vehicle_information).
+
+   
+    - Tôi muốn [xe tay ga](vehicle_information).
+    - Tôi cần [xe côn tay](vehicle_information).
+    - Tôi đang tìm [xe số](vehicle_information).
+    - Tôi muốn mua một chiếc [xe tay ga](vehicle_information).
+    - Xe tôi cần là một chiếc [xe côn tay](vehicle_information).
+    - Tôi thích [xe số](vehicle_information).
+    - Tôi muốn sở hữu một chiếc [xe tay ga](vehicle_information) mới.
+    - Tôi cần [xe côn tay](vehicle_information) để di chuyển.
+    - Tôi đang tìm [xe số](vehicle_information) cho công việc.
+    - Xe tôi đang tìm là [xe tay ga](vehicle_information).
+    - Tôi muốn mua một chiếc [xe côn tay](vehicle_information).
+    - Tôi đang muốn mua [xe số](vehicle_information) giá hợp lý.
+    - Xe tôi cần là một chiếc [xe tay ga](vehicle_information) tiện dụng.
+    - Tôi muốn một chiếc [xe côn tay](vehicle_information) mạnh mẽ.
+    - Tôi đang tìm một chiếc [xe số](vehicle_information) tiết kiệm nhiên liệu.
+    - Tôi muốn sở hữu một chiếc [xe tay ga](vehicle_information) cho việc đi lại.
+    - Xe tôi cần là một chiếc [xe côn tay](vehicle_information) thể thao.
+    - Tôi đang tìm [xe số](vehicle_information) cho nhu cầu đi làm.
+    - Tôi muốn mua một chiếc [xe tay ga](vehicle_information) cho vợ tôi.
+    - Tôi cần một chiếc [xe côn tay](vehicle_information) cho người mới học lái.
+
+  
+    - Tôi cần xe [không phanh abs](vehicle_information), màu [vàng](vehicle_information), [200 phân khối](vehicle_information), bản [tiêu chuẩn](vehicle_information).
+    - Tôi muốn xe có [phanh abs](vehicle_information), màu [đỏ](vehicle_information), [150 phân khối](vehicle_information), phiên bản [đặc biệt](vehicle_information).
+    - Tôi đang tìm xe màu [trắng](vehicle_information), có [phanh abs](vehicle_information), [125 cc](vehicle_information), và [cao cấp](vehicle_information).
+    - Xe tôi cần có [phanh abs](vehicle_information), màu [xanh](vehicle_information), [250 phân khối](vehicle_information), bản [tiêu chuẩn](vehicle_information).
+    - Tôi cần xe [không phanh abs](vehicle_information), màu [đen](vehicle_information), [180 phân khối](vehicle_information), bản [cao cấp](vehicle_information).
+    - Tôi đang tìm xe [không phanh abs](vehicle_information), màu [vàng](vehicle_information), [100 phân khối](vehicle_information), phiên bản [đặc biệt](vehicle_information).
+    - Tôi muốn tìm xe [có phanh abs](vehicle_information), màu [Bạc](vehicle_information), [300cc](vehicle_information), và bản [tiêu chuẩn](vehicle_information).
+    - Tôi cần xe có [phanh abs](vehicle_information), màu [xanh Dương](vehicle_information), [125 phân khối](vehicle_information), và phiên bản [đặc biệt](vehicle_information).
+    - Tôi cần một chiếc xe có [phanh abs](vehicle_information), màu [đỏ](vehicle_information), [150 phân khối](vehicle_information), bản [cao cấp](vehicle_information).
+    - Tôi đang tìm xe [không phanh abs](vehicle_information), màu [trắng](vehicle_information), [200 cc](vehicle_information), bản [tiêu chuẩn](vehicle_information).
+    - Xe này tôi cần phải có [phanh abs](vehicle_information), màu [xám](vehicle_information), [250 phân khối](vehicle_information), và bản [tiêu chuẩn](vehicle_information).
+    - Tôi muốn xe có [phanh abs](vehicle_information), màu [xanh lá](vehicle_information), [300 phân khối](vehicle_information), và bản [đặc biệt](vehicle_information).
+    - Tôi tìm xe [không phanh abs](vehicle_information), màu [vàng](vehicle_information), [125cc](vehicle_information), bản [cao cấp](vehicle_information).
+    - Xe tôi tìm phải có [phanh abs](vehicle_information), màu [đỏ](vehicle_information), [150 phân khối](vehicle_information), bản [đặc biệt](vehicle_information).
+    - Tôi muốn một chiếc xe [không phanh abs](vehicle_information), màu [đen](vehicle_information), [200 phân khối](vehicle_information), và phiên bản [tiêu chuẩn](vehicle_information).
+    - Tôi cần xe [có phanh abs](vehicle_information), màu [Bạc](vehicle_information), [125cc](vehicle_information), và bản [cao cấp](vehicle_information).
+    - Tôi muốn xe có [không phanh abs](vehicle_information), màu [vàng](vehicle_information), [200 phân khối](vehicle_information), bản [đặc biệt](vehicle_information).
+    - Tôi đang tìm xe [có phanh abs](vehicle_information), màu [trắng](vehicle_information), [180 phân khối](vehicle_information), phiên bản [tiêu chuẩn](vehicle_information).
+    - Tôi cần một chiếc xe [không phanh abs](vehicle_information), màu [xanh Dương](vehicle_information), [300 phân khối](vehicle_information), và phiên bản [cao cấp](vehicle_information).
+    - Xe tôi cần phải có [phanh abs](vehicle_information), màu [xanh lá](vehicle_information), [150cc](vehicle_information), và phiên bản [đặc biệt](vehicle_information).
+    - Tôi muốn xe màu [đỏ](vehicle_information), có [phanh abs](vehicle_information), [200 phân khối](vehicle_information), và phiên bản [tiêu chuẩn](vehicle_information).
+    - Tôi tìm xe có [không phanh abs](vehicle_information), màu [vàng](vehicle_information), [100 phân khối](vehicle_information), bản [cao cấp](vehicle_information).
+    - Xe tôi cần phải có [phanh abs](vehicle_information), màu [xám](vehicle_information), [250cc](vehicle_information), và phiên bản [tiêu chuẩn](vehicle_information).
+    - Tôi cần xe [100 phân khối](vehicle_information), màu [đen](vehicle_information), phiên bản [tiêu chuẩn](vehicle_information).
+    - Tôi muốn xe [125 phân khối](vehicle_information), màu [vàng](vehicle_information), có [phanh abs](vehicle_information).
+    - Xe của tôi phải có [150cc](vehicle_information), màu [đỏ](vehicle_information), và phiên bản [đặc biệt](vehicle_information).
+    - Tôi cần xe [honda](vehicle_information), màu [xanh](vehicle_information), [100cc](vehicle_information), và phiên bản [cao cấp](vehicle_information).
+    - Tôi muốn xe [yamaha](vehicle_information), màu [trắng](vehicle_information), [125cc](vehicle_information), và có [phanh abs](vehicle_information).
+    - Tôi cần xe [suzuki](vehicle_information), màu [xám](vehicle_information), [150 phân khối](vehicle_information), và phiên bản [tiêu chuẩn](vehicle_information).
+    - Xe tôi cần có [honda](vehicle_information), màu [cam](vehicle_information), [200 cc](vehicle_information), và [phanh abs](vehicle_information).
+    - Tôi muốn xe [wave rsx](vehicle_information), màu [vàng](vehicle_information), [100 phân khối](vehicle_information), và phiên bản [đặc biệt](vehicle_information).
+    - Xe tôi cần là [future](vehicle_information), màu [xanh](vehicle_information), [125cc](vehicle_information), và bảo hành [1 năm](vehicle_information).
+    - Tôi muốn xe [winner x](vehicle_information), màu [đen](vehicle_information), [150cc](vehicle_information), và phiên bản [cao cấp](vehicle_information).
+    - Tôi cần xe [vision](vehicle_information), màu [trắng](vehicle_information), có [phanh abs](vehicle_information), và bảo hành [2 năm](vehicle_information).
+    - Xe tôi muốn là [sh mode](vehicle_information), màu [xám](vehicle_information), [100cc](vehicle_information), và [cao cấp](vehicle_information).
+    - Tôi đang tìm xe [exciter](vehicle_information), màu [cam](vehicle_information), [125 phân khối](vehicle_information), và bảo hành [1 năm](vehicle_information).
+    - Tôi cần xe [sirius](vehicle_information), màu [đỏ](vehicle_information), [150 phân khối](vehicle_information), và phiên bản [tiêu chuẩn](vehicle_information).
+    - Xe tôi cần có [raider](vehicle_information), màu [xanh](vehicle_information), [125 phân khối](vehicle_information), và [phanh abs](vehicle_information).
+    - Tôi muốn xe [honda](vehicle_information), màu [tím](vehicle_information), [200 phân khối](vehicle_information), và bảo hành [2 năm](vehicle_information).
+    - Xe tôi cần là [yamaha](vehicle_information), màu [đen](vehicle_information), [100 cc](vehicle_information), và [phanh abs](vehicle_information).
+    - Tôi cần xe [suzuki](vehicle_information), màu [xám](vehicle_information), [150 cc](vehicle_information), và bảo hành [1 năm](vehicle_information).
+    - Tôi muốn xe [honda](vehicle_information), màu [vàng](vehicle_information), [125 phân khối](vehicle_information), và phiên bản [đặc biệt](vehicle_information).
+    - Xe tôi muốn có [phanh abs](vehicle_information), màu [đỏ](vehicle_information), [200 phân khối](vehicle_information), và phiên bản [tiêu chuẩn](vehicle_information).
+    - Tôi đang tìm xe [wave rsx](vehicle_information), màu [xanh](vehicle_information), [100cc](vehicle_information), và bảo hành [2 năm](vehicle_information).
+    - Tôi muốn xe [future](vehicle_information), màu [trắng](vehicle_information), [150 cc](vehicle_information), và phiên bản [cao cấp](vehicle_information).
+    - Xe tôi cần có [winner x](vehicle_information), màu [cam](vehicle_information), [125 phân khối](vehicle_information), và bảo hành [1 năm](vehicle_information).
+    - Tôi cần xe [sh mode](vehicle_information), màu [đen](vehicle_information), [200 cc](vehicle_information), và có [phanh abs](vehicle_information).
+    - Tôi muốn xe [exciter](vehicle_information), màu [xám](vehicle_information), [100cc](vehicle_information), và phiên bản [đặc biệt](vehicle_information).
+    - Xe tôi tìm phải là [sirius](vehicle_information), màu [xanh](vehicle_information), [125 cc](vehicle_information), và bảo hành [2 năm](vehicle_information).
+    - Tôi muốn xe [raider](vehicle_information), màu [đỏ](vehicle_information), [150 phân khối](vehicle_information), và [phanh abs](vehicle_information).
+    - Xe của tôi là [honda](vehicle_information), màu [vàng](vehicle_information), [125cc](vehicle_information), và bảo hành [1 năm](vehicle_information).
+    - Tôi cần xe [yamaha](vehicle_information), màu [trắng](vehicle_information), [100cc](vehicle_information), và bảo hành [2 năm](vehicle_information).
+    - Tôi muốn xe [suzuki](vehicle_information), màu [xám](vehicle_information), [150cc](vehicle_information), và phiên bản [tiêu chuẩn](vehicle_information).
+    - Xe tôi cần là [wave rsx](vehicle_information), màu [đen](vehicle_information), [100 phân khối](vehicle_information), và bảo hành [1 năm](vehicle_information).
+    - Tôi muốn xe [future](vehicle_information), màu [xanh](vehicle_information), [125cc](vehicle_information), và bảo hành [2 năm](vehicle_information).
+    - Xe tôi tìm phải là [winner x](vehicle_information), màu [tím](vehicle_information), [150cc](vehicle_information), và phiên bản [cao cấp](vehicle_information).
+    - Tôi cần xe [sh mode](vehicle_information), màu [đen](vehicle_information), [200 phân khối](vehicle_information), và có [phanh abs](vehicle_information).
+    - Tôi cần xe [exciter](vehicle_information), màu [vàng](vehicle_information), [125 phân khối](vehicle_information), và bảo hành [2 năm](vehicle_information).
+    - Xe tôi muốn là [sirius](vehicle_information), màu [xanh](vehicle_information), [150 phân khối](vehicle_information), và phiên bản [tiêu chuẩn](vehicle_information).
+    - Tôi cần xe [raider](vehicle_information), màu [cam](vehicle_information), [200 phân khối](vehicle_information), và bảo hành [1 năm](vehicle_information).
+    - Xe tôi muốn có [phanh abs](vehicle_information), màu [trắng](vehicle_information), [125 phân khối](vehicle_information), và phiên bản [cao cấp](vehicle_information).
+    - Tôi muốn xe [honda](vehicle_information), màu [đỏ](vehicle_information), [100 phân khối](vehicle_information), và phiên bản [tiêu chuẩn](vehicle_information).
+    - Xe tôi cần là [yamaha](vehicle_information), màu [vàng](vehicle_information), [150 phân khối](vehicle_information), và bảo hành [1 năm](vehicle_information).
+    - Tôi muốn xe [suzuki](vehicle_information), màu [xám](vehicle_information), [200cc](vehicle_information), và bảo hành [2 năm](vehicle_information).
+    - Tôi cần xe [wave rsx](vehicle_information), màu [đỏ](vehicle_information), [125 cc](vehicle_information), và phiên bản [đặc biệt](vehicle_information).
+    - Xe tôi muốn có [phanh abs](vehicle_information), màu [xanh](vehicle_information), [150cc](vehicle_information), và bảo hành [2 năm](vehicle_information).
+    - Tôi đang tìm xe [future](vehicle_information), màu [trắng](vehicle_information), [100 phân khối](vehicle_information), và phiên bản [tiêu chuẩn](vehicle_information).
+    - Tôi cần xe [winner x](vehicle_information), màu [xám](vehicle_information), [125 phân khối](vehicle_information), và bảo hành [1 năm](vehicle_information).
+    - Xe tôi muốn có [phanh abs](vehicle_information), màu [cam](vehicle_information), [150cc](vehicle_information), và bảo hành [2 năm](vehicle_information).
+    - Tôi cần xe [sh mode](vehicle_information), màu [đen](vehicle_information), [200cc](vehicle_information), và bảo hành [1 năm](vehicle_information).
+    - Xe của tôi cần có [exciter](vehicle_information), màu [xanh](vehicle_information), [125 cc](vehicle_information), và phiên bản [đặc biệt](vehicle_information).
+    - Tôi cần xe [sirius](vehicle_information), màu [vàng](vehicle_information), [150 phân khối](vehicle_information), và bảo hành [2 năm](vehicle_information).
+    - Tôi cần xe [raider](vehicle_information), màu [xám](vehicle_information), [200 phân khối](vehicle_information), và phiên bản [tiêu chuẩn](vehicle_information).
+    - Xe tôi tìm là [honda](vehicle_information), màu [trắng](vehicle_information), [100 phân khối](vehicle_information), và bảo hành [1 năm](vehicle_information).
+    - Tôi cần xe [yamaha](vehicle_information), màu [cam](vehicle_information), [125 phân khối](vehicle_information), và bảo hành [2 năm](vehicle_information).
+    - Tôi muốn xe [suzuki](vehicle_information), màu [đen](vehicle_information), [150 phân khối](vehicle_information), và bảo hành [1 năm](vehicle_information).
+    - Xe tôi cần có [wave rsx](vehicle_information), màu [trắng](vehicle_information), [200 cc](vehicle_information), và phiên bản [cao cấp](vehicle_information).
+    - Tôi muốn xe [future](vehicle_information), màu [đỏ](vehicle_information), [125 phân khối](vehicle_information), và bảo hành [2 năm](vehicle_information).
+    - Xe tôi cần là [winner x](vehicle_information), màu [cam](vehicle_information), [100 phân khối](vehicle_information), và bảo hành [1 năm](vehicle_information).
+    - Tôi cần xe [sh mode](vehicle_information), màu [xám](vehicle_information), [150 phân khối](vehicle_information), và có [phanh abs](vehicle_information).
+    - Tôi cần xe [exciter](vehicle_information), màu [vàng](vehicle_information), [125 phân khối](vehicle_information), và phiên bản [tiêu chuẩn](vehicle_information).
+    - Xe tôi muốn có [phanh abs](vehicle_information), màu [đen](vehicle_information), [100 phân khối](vehicle_information), và bảo hành [2 năm](vehicle_information).
+    - Tôi muốn xe [sirius](vehicle_information), màu [xanh](vehicle_information), [200cc](vehicle_information), và bảo hành [1 năm](vehicle_information).
+    - Tôi cần xe [raider](vehicle_information), màu [tím](vehicle_information), [125 phân khối](vehicle_information), và phiên bản [đặc biệt](vehicle_information).
+    - Xe tôi tìm là [honda](vehicle_information), màu [xám](vehicle_information), [100cc](vehicle_information), và phiên bản [cao cấp](vehicle_information).
+    - Tôi muốn xe [yamaha](vehicle_information), màu [vàng](vehicle_information), [150 phân khối](vehicle_information), và bảo hành [1 năm](vehicle_information).
+    - Xe của tôi cần có [suzuki](vehicle_information), màu [trắng](vehicle_information), [200 phân khối](vehicle_information), và phiên bản [tiêu chuẩn](vehicle_information).
+    - Tôi cần xe [wave rsx](vehicle_information), màu [cam](vehicle_information), [125 phân khối](vehicle_information), và bảo hành [2 năm](vehicle_information).
+    - Tôi cần xe có [phanh abs](vehicle_information), màu [vàng](vehicle_information), và [100cc](vehicle_information).
+    - Tôi muốn xe có [tiêu chuẩn](vehicle_information), màu [đỏ](vehicle_information), và [150 phân khối](vehicle_information).
+    - Xe tôi cần có bảo hành [1 năm](vehicle_information), màu [trắng](vehicle_information), và [200 phân khối](vehicle_information).
+    - Xe tôi muốn là [suzuki](vehicle_information), bảo hành [2 năm](vehicle_information), màu [xám](vehicle_information), và [125 cc](vehicle_information).
+    - Tôi cần xe phiên bản [cao cấp](vehicle_information), màu [cam](vehicle_information), và [150 phân khối](vehicle_information).
+    - Xe tôi cần là [future](vehicle_information), màu [xanh](vehicle_information), và [100 phân khối](vehicle_information).
+    - Tôi muốn xe có bảo hành [1 năm](vehicle_information), màu [vàng](vehicle_information), và [125 phân khối](vehicle_information).
+    - Xe tôi cần có màu [trắng](vehicle_information), bảo hành [2 năm](vehicle_information), và [200cc](vehicle_information).
+    - Xe tôi muốn là [wave rsx](vehicle_information), màu [xám](vehicle_information), và [150 phân khối](vehicle_information).
+    - Tôi cần xe của [yamaha](vehicle_information), màu [đỏ](vehicle_information), và [100cc](vehicle_information).
+    - Tôi muốn xe có [phanh abs](vehicle_information), màu [xanh](vehicle_information), và [125 phân khối](vehicle_information).
+    - Xe tôi cần là [raider](vehicle_information), màu [trắng](vehicle_information), và [200cc](vehicle_information).
+    - Tôi cần xe màu [vàng](vehicle_information), bảo hành [2 năm](vehicle_information), và [150 phân khối](vehicle_information).
+    - Xe tôi muốn là [sh mode](vehicle_information), màu [cam](vehicle_information), và [100cc](vehicle_information).
+    - Xe tôi cần có [phanh abs](vehicle_information), màu [xám](vehicle_information), và [200 phân khối](vehicle_information).
+    - Tôi cần xe [honda](vehicle_information), màu [đỏ](vehicle_information), và [150 cc](vehicle_information).
+    - Xe tôi muốn có bảo hành [1 năm](vehicle_information), màu [xanh](vehicle_information), và [100 cc](vehicle_information).
+    - Tôi cần xe [suzuki](vehicle_information), màu [vàng](vehicle_information), và [125cc](vehicle_information).
+    - Xe tôi muốn có màu [trắng](vehicle_information), bảo hành [2 năm](vehicle_information), và [200 phân khối](vehicle_information).
+    - Tôi cần xe màu [cam](vehicle_information), bảo hành [1 năm](vehicle_information), và [125cc](vehicle_information).
+    - Xe tôi cần là [winner x](vehicle_information), màu [đen](vehicle_information), và [200cc](vehicle_information).
+    - Xe tôi muốn có màu [xanh](vehicle_information), phiên bản [cao cấp](vehicle_information), và [150 cc](vehicle_information).
+    - Tôi cần xe màu [trắng](vehicle_information), bảo hành [1 năm](vehicle_information), và [200 phân khối](vehicle_information).
+    - Xe tôi cần có [phanh abs](vehicle_information), màu [vàng](vehicle_information), và [100 cc](vehicle_information).
+    - Tôi muốn xe màu [đỏ](vehicle_information), bảo hành [2 năm](vehicle_information), và [150 cc](vehicle_information).
+    - Tôi cần xe có bảo hành [1 năm](vehicle_information), màu [cam](vehicle_information), và [125 cc](vehicle_information).
+    - Xe tôi cần có màu [xám](vehicle_information), bảo hành [2 năm](vehicle_information), và [150 phân khối](vehicle_information).
+    - Tôi cần xe [wave rsx](vehicle_information), màu [trắng](vehicle_information), và [200cc](vehicle_information).
+    - Xe tôi muốn có bảo hành [1 năm](vehicle_information), màu [vàng](vehicle_information), và [200 phân khối](vehicle_information).
+    - Tôi muốn xe màu [đen](vehicle_information), bảo hành [2 năm](vehicle_information), và [150cc](vehicle_information).
+    - Xe tôi cần có [phanh abs](vehicle_information), màu [xám](vehicle_information), và [125cc](vehicle_information).
+    - Xe tôi cần có [honda](vehicle_information), màu [đỏ](vehicle_information), và [150cc](vehicle_information).
+    - Tôi muốn xe màu [trắng](vehicle_information), bảo hành [1 năm](vehicle_information), và [100 cc](vehicle_information).
+    - Xe tôi cần là [raider](vehicle_information), màu [vàng](vehicle_information), và [200 phân khối](vehicle_information).
+    - Xe tôi cần có màu [cam](vehicle_information), bảo hành [2 năm](vehicle_information), và [100 phân khối](vehicle_information).
+    - Xe tôi muốn là [winner x](vehicle_information), màu [xanh](vehicle_information), và [125 cc](vehicle_information).
+    - Tôi cần xe có [phanh abs](vehicle_information), màu [trắng](vehicle_information), và [150 phân khối](vehicle_information).
+    - Xe tôi cần là [exciter](vehicle_information), màu [đen](vehicle_information), và [100cc](vehicle_information).
+    - Xe tôi muốn có màu [đỏ](vehicle_information), bảo hành [1 năm](vehicle_information), và [200 phân khối](vehicle_information).
+    - Xe tôi cần là [sh mode](vehicle_information), màu [xám](vehicle_information), và [125 phân khối](vehicle_information).
+    - Tôi cần xe màu [vàng](vehicle_information), bảo hành [2 năm](vehicle_information), và [150 cc](vehicle_information).
+    - Tôi cần xe có [phanh abs](vehicle_information), màu [trắng](vehicle_information), và [200 phân khối](vehicle_information).
+    - Xe tôi cần là [honda](vehicle_information), màu [xanh](vehicle_information), và [150 phân khối](vehicle_information).
+    - Tôi muốn xe có bảo hành [1 năm](vehicle_information), màu [đen](vehicle_information), và [125 cc](vehicle_information).
+    - Xe tôi cần là [wave rsx](vehicle_information), màu [xám](vehicle_information), và [200 phân khối](vehicle_information).
+    - Xe tôi cần có bảo hành [2 năm](vehicle_information), màu [trắng](vehicle_information), và [100 phân khối](vehicle_information).
+    - Tôi muốn xe có màu [vàng](vehicle_information), bảo hành [1 năm](vehicle_information), và [150 phân khối](vehicle_information).
+    - Xe tôi cần có [phanh abs](vehicle_information), màu [cam](vehicle_information), và [125 phân khối](vehicle_information).
+    - Tôi cần xe [không phanh abs](vehicle_information), màu [vàng](vehicle_information), và [100 phân khối](vehicle_information).
+    - Xe tôi cần có màu [đỏ](vehicle_information), bảo hành [1 năm](vehicle_information), và [không phanh abs](vehicle_information).
+    - Tôi muốn xe có [không phanh abs](vehicle_information), màu [trắng](vehicle_information), và [150 cc](vehicle_information).
+    - Xe tôi cần có màu [xanh](vehicle_information), bảo hành [2 năm](vehicle_information), và [không phanh abs](vehicle_information).
+    - Tôi cần xe có màu [xám](vehicle_information), bảo hành [1 năm](vehicle_information), và [không phanh abs](vehicle_information).
+    - Xe tôi cần có màu [vàng](vehicle_information), bảo hành [2 năm](vehicle_information), và [không phanh abs](vehicle_information).
+    - Tôi cần xe màu [đen](vehicle_information), bảo hành [2 năm](vehicle_information), và [không phanh abs](vehicle_information).
+    - Xe tôi muốn là [honda](vehicle_information), màu [trắng](vehicle_information), và [không phanh abs](vehicle_information).
+    - Xe tôi cần có màu [cam](vehicle_information), bảo hành [1 năm](vehicle_information), và [không phanh abs](vehicle_information).
+    - Tôi muốn xe màu [xanh](vehicle_information), bảo hành [2 năm](vehicle_information), và [không phanh abs](vehicle_information).
+    - Xe tôi cần là [wave rsx](vehicle_information), màu [vàng](vehicle_information), và [không phanh abs](vehicle_information).
+    - Xe tôi cần có màu [xanh](vehicle_information), bảo hành [1 năm](vehicle_information), và [không phanh abs](vehicle_information).
+    - Xe tôi muốn là [raider](vehicle_information), màu [đen](vehicle_information), và [không phanh abs](vehicle_information).
+    - Tôi cần xe có [không phanh abs](vehicle_information), màu [cam](vehicle_information), và [125 phân khối](vehicle_information).
+    - Tôi cần xe [wave rsx](vehicle_information), màu [xám](vehicle_information), và [không phanh abs](vehicle_information).
+    - Xe tôi cần có [không phanh abs](vehicle_information), màu [trắng](vehicle_information), và [200 phân khối](vehicle_information).
+    - Xe tôi muốn có màu [vàng](vehicle_information), bảo hành [1 năm](vehicle_information), và [không phanh abs](vehicle_information).
+    - Xe tôi cần là [exciter](vehicle_information), màu [xanh](vehicle_information), và [không phanh abs](vehicle_information).
+    - Tôi cần xe [honda](vehicle_information), màu [cam](vehicle_information), và [không phanh abs](vehicle_information).
+    - Xe tôi cần có màu [đen](vehicle_information), bảo hành [2 năm](vehicle_information), và [không phanh abs](vehicle_information).
+    - Tôi cần xe màu [xanh](vehicle_information), bảo hành [1 năm](vehicle_information), và [không phanh abs](vehicle_information).
+    - Xe tôi cần có màu [vàng](vehicle_information), bảo hành [2 năm](vehicle_information), và [không phanh abs](vehicle_information).
+    - Tôi cần xe màu [đỏ](vehicle_information), bảo hành [1 năm](vehicle_information), và [không phanh abs](vehicle_information).
+    - Xe tôi muốn là [future](vehicle_information), màu [trắng](vehicle_information), và [không phanh abs](vehicle_information).
+    - Xe tôi cần là [sh mode](vehicle_information), màu [cam](vehicle_information), và [không phanh abs](vehicle_information).
+    - Xe tôi muốn có [không phanh abs](vehicle_information), màu [xám](vehicle_information), và [200 phân khối](vehicle_information).
+    - Tôi cần xe màu [đen](vehicle_information), bảo hành [1 năm](vehicle_information), và [không phanh abs](vehicle_information).
+    - Xe tôi cần có màu [vàng](vehicle_information), bảo hành [2 năm](vehicle_information), và [không phanh abs](vehicle_information).
+    - Tôi muốn xe màu [cam](vehicle_information), bảo hành [2 năm](vehicle_information), và [không phanh abs](vehicle_information).
+    - Xe tôi cần là [winner x](vehicle_information), màu [đỏ](vehicle_information), và [không phanh abs](vehicle_information).
+    - Xe tôi muốn có màu [xanh](vehicle_information), bảo hành [1 năm](vehicle_information), và [không phanh abs](vehicle_information).
+    - Tôi cần xe màu [xám](vehicle_information), bảo hành [1 năm](vehicle_information), và [không phanh abs](vehicle_information).
+    - Tôi cần [xe tay ga](vehicle_information) có công suất [100 phân khối](vehicle_information).
+    - Tôi muốn mua một chiếc [xe số](vehicle_information) màu [đỏ](vehicle_information).
+    - Xe tôi cần là một chiếc [xe côn tay](vehicle_information) màu [vàng](vehicle_information).
+    - Tôi đang tìm [xe tay ga](vehicle_information) có phanh [abs](vehicle_information).
+    - Tôi cần xe [wave rsx](vehicle_information) với mức tiêu thụ [2.5 lít](vehicle_information) cho mỗi 100km.
+    - Tôi muốn xe [honda](vehicle_information) với bảo hành [1 năm](vehicle_information).
+    - Xe tôi đang tìm là [xe số](vehicle_information) màu [xanh](vehicle_information).
+    - Tôi muốn sở hữu một chiếc [xe côn tay](vehicle_information) có công suất [150 phân khối](vehicle_information).
+    - Tôi cần xe [future](vehicle_information) màu [trắng](vehicle_information) với mức tiêu thụ [2 lít/100km](vehicle_information).
+    - Tôi muốn một chiếc [xe tay ga](vehicle_information) với bảo hành [2 năm](vehicle_information).
+    - Xe tôi muốn là [exciter](vehicle_information) màu [xám](vehicle_information).
+    - Tôi cần xe [yamaha](vehicle_information) với mức tiêu thụ [2.5 lít/100km](vehicle_information).
+    - Tôi muốn xe [vision](vehicle_information) có công suất [100 phân khối](vehicle_information).
+    - Tôi cần xe [sh mode](vehicle_information) với phanh [abs](vehicle_information).
+    - Tôi đang tìm một chiếc [xe côn tay](vehicle_information) màu [tím](vehicle_information).
+    - Xe tôi cần là một chiếc [xe tay ga](vehicle_information) màu [cam](vehicle_information).
+    - Tôi muốn xe [honda](vehicle_information) có phanh [abs](vehicle_information).
+    - Tôi đang tìm xe [winner x](vehicle_information) với bảo hành [1 năm](vehicle_information).
+    - Tôi cần [xe số](vehicle_information) với công suất [125 phân khối](vehicle_information).
+    - Xe tôi muốn là một chiếc [xe tay ga](vehicle_information) có phanh [abs](vehicle_information).
+    - Tôi muốn một chiếc [xe côn tay](vehicle_information) với bảo hành [2 năm](vehicle_information).
+    - Xe tôi cần là [raider](vehicle_information) với màu [xanh](vehicle_information).
+    - Tôi muốn xe [suzuki](vehicle_information) với bảo hành [1 năm](vehicle_information).
+    - Tôi cần [xe tay ga](vehicle_information) có màu [trắng](vehicle_information).
+    - Xe tôi cần là một chiếc [xe côn tay](vehicle_information) với công suất [150 cc](vehicle_information).
+    - Tôi muốn mua một chiếc [xe số](vehicle_information) màu [đen](vehicle_information).
+    - Xe tôi muốn là [vision](vehicle_information) với mức tiêu thụ [2 lít](vehicle_information).
+    - Tôi muốn xe [yamaha](vehicle_information) với bảo hành [2 năm](vehicle_information).
+    - Tôi cần một chiếc [xe tay ga](vehicle_information) với công suất [125 cc](vehicle_information).
+    - Tôi đang tìm xe [future](vehicle_information) với phanh [abs](vehicle_information).
+    - Xe tôi muốn là một chiếc [exciter](vehicle_information) màu [đỏ](vehicle_information).
+    - Tôi muốn một chiếc [xe số](vehicle_information) màu [vàng](vehicle_information).
+    - Tôi cần xe [winner x](vehicle_information) với công suất [100 cc](vehicle_information).
+    - Tôi cần một chiếc [xe côn tay](vehicle_information) với mức tiêu thụ [2.5 lít/100km](vehicle_information).
+    - Xe tôi muốn là [raider](vehicle_information) với công suất [125 cc](vehicle_information).
+    - Tôi muốn mua một chiếc [xe tay ga](vehicle_information) với bảo hành [2 năm](vehicle_information).
+    - Tôi cần xe [sh mode](vehicle_information) với công suất [100 cc](vehicle_information).
+    - Xe tôi đang tìm là một chiếc [xe tay ga](vehicle_information) màu [cam](vehicle_information).
+    - Tôi cần một chiếc [xe côn tay](vehicle_information) với mức tiêu thụ [2 lít](vehicle_information).
+    - Tôi muốn xe [future](vehicle_information) với màu [tím](vehicle_information).
+    - Xe tôi cần là một chiếc [xe số](vehicle_information) với bảo hành [1 năm](vehicle_information).
+    - Tôi cần xe [exciter](vehicle_information) màu [trắng](vehicle_information) với phanh [abs](vehicle_information).
+    - Tôi muốn mua một chiếc [xe côn tay](vehicle_information) với màu [xanh](vehicle_information).
+    - Xe tôi muốn là [wave rsx](vehicle_information) với mức tiêu thụ [2 lít/100km](vehicle_information).
+    - Tôi cần xe [yamaha](vehicle_information) màu [vàng](vehicle_information) với phanh [abs](vehicle_information).
+    - Xe tôi đang tìm là một chiếc [xe tay ga](vehicle_information) với công suất [150 cc](vehicle_information).
+    - Tôi cần xe [honda](vehicle_information) màu [tím](vehicle_information) với bảo hành [2 năm](vehicle_information).
+    - Tôi muốn một chiếc [xe số](vehicle_information) có phanh [abs](vehicle_information).
+    - Xe tôi muốn là [sh mode](vehicle_information) với công suất [125 phân khối](vehicle_information).
+    - Tôi muốn xe [raider](vehicle_information) với bảo hành [1 năm](vehicle_information).
+    - Xe tôi cần là [vision](vehicle_information) với công suất [100 phân khối](vehicle_information).
+
+
+ 

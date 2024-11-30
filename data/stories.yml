@@ -8,4 +8,5 @@ stories:
           - vehicle_information: "100hp, honda"
       - slot_was_set:
           - vehicle_information: "100hp, honda"
+      - action: action_convert_cc_to_phan_khoi
       - action: utter_vehicle_information
