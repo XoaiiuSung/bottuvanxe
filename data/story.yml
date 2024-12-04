@@ -1,0 +1,27 @@
+version: "3.1"
+
+stories:
+- story: search_vehicle_information
+  steps:
+      - intent: provide_vehicle_information
+        entities:
+          - color: "đỏ"
+          - version: "tiêu chuẩn"
+          - brand: "honda"
+          - model: "vision"
+          - spec: "100cc"
+          - brake: "không phanh abs"
+          - warranty: "2 năm"
+          - type: "xe côn tay"
+      - slot_was_set:
+          - color: "đỏ"
+          - version: "tiêu chuẩn"
+          - brand: "honda"
+          - model: "vision"
+          - spec: "100cc"
+          - brake: "không phanh abs"
+          - warranty: "2 năm"
+          - type: "xe côn tay"
+      - action: action_convert_cc_to_phan_khoi
+      - action: action_check_slots
+      #- action: utter_vehicle_information

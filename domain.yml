@@ -12,43 +12,116 @@ intents:
 
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
+  - text: "Xin chào! Tôi có thể giúp gì cho bạn?"
 
   utter_cheer_up:
-  - text: "Here is something to cheer you up:"
+  - text: "Đây là một hình ảnh vui vẻ dành cho bạn!"
     image: "https://i.imgur.com/nGF1K8f.jpg"
 
   utter_did_that_help:
-  - text: "Did that help you?"
+  - text: "Điều đó có giúp được bạn không?"
 
   utter_happy:
-  - text: "Great, carry on!"
+  - text: "Tuyệt vời! Hãy tiếp tục nhé!"
 
   utter_goodbye:
-  - text: "Bye"
+  - text: "Tạm biệt! Hẹn gặp lại bạn."
 
   utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+  - text: "Tôi là bot, được phát triển bởi Rasa."
 
   utter_vehicle_information:
-  - text: "Bạn cần tìm chiếc xe có những thông số sau: {vehicle_information}. Hãy tham khảo những chiếc xe sau."
+  - text: |
+      Bạn muốn tìm xe với các thông tin sau:
+      - Màu sắc: {color}
+      - Phiên bản: {version}
+      - Hãng: {brand}
+      - Dòng xe: {model}
+      - Thông số: {spec}
+      - Loại phanh: {brake}
+      - Bảo hành: {warranty}
+      - Loại xe: {type}
+      Bạn còn muốn thêm thông tin nào không? 
 
 entities:
+  - color
+  - version
+  - brand
+  - model
+  - spec
+  - brake
+  - warranty
+  - type
   - vehicle_information
 
 slots:
+  color:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: color
+
+  version:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: version
+
+  brand:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: brand
+
+  model:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: model
+
+  spec:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: spec
+
+  brake:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: brake
+
+  warranty:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: warranty
+
+  type:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: type
+
   vehicle_information:
     type: list
+    influence_conversation: true
     mappings:
       - type: from_entity
         entity: vehicle_information
-    influence_conversation: true
 
 actions:
   - action_convert_cc_to_phan_khoi
+  - action_check_slots
 
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
-
-  

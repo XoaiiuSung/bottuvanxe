@@ -11,3 +11,20 @@ rules:
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+
+- rule: Say 'hello
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+# - rule: search_vehicle_information
+#   steps:
+#     - intent: provide_vehicle_information
+#     - action: action_provide_vehicle_information
+
+
+# - rule: search_vehicle_information
+#   steps:
+#       - intent: provide_vehicle_information
+#       - action: action_convert_cc_to_phan_khoi
+#       - action: utter_vehicle_information
