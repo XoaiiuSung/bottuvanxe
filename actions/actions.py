@@ -98,6 +98,7 @@ class ActionCheckSlots(Action):
         brake = tracker.get_slot('brake')
         warranty = tracker.get_slot('warranty')
         type = tracker.get_slot('type')
+        maxprice = tracker.get_slot('maxprice')
         
         # Tạo danh sách các thông tin đã được cung cấp
         info = []
@@ -117,6 +118,8 @@ class ActionCheckSlots(Action):
             info.append(f"- Bảo hành: {warranty}")
         if type:
             info.append(f"- Loại xe: {type}")
+        if maxprice:
+            info.append(f"- Giá tối đa: {maxprice}")
 
         # In ra tất cả các thông tin từ các slot
         print(f"Dữ liệu slot 'color': {color}")
@@ -127,6 +130,8 @@ class ActionCheckSlots(Action):
         print(f"Dữ liệu slot 'brake': {brake}")
         print(f"Dữ liệu slot 'warranty': {warranty}")
         print(f"Dữ liệu slot 'type': {type}")
+        print(f"Dữ liệu slot 'maxprice': {maxprice}")
+
         
         # Kiểm tra số lượng thông tin đã được cung cấp
         

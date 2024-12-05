@@ -11,6 +11,35 @@ nlu:
     - xám
     - cam
     - tím
+    - đen vàng
+    - đen đỏ
+    - đen xanh
+    - đen trắng
+    - đen xám
+    - đen cam
+    - đen tím
+    - vàng đỏ
+    - vàng xanh
+    - vàng trắng
+    - vàng xám
+    - vàng cam
+    - vàng tím
+    - đỏ xanh
+    - đỏ trắng
+    - đỏ xám
+    - đỏ cam
+    - đỏ tím
+    - xanh trắng
+    - xanh xám
+    - xanh cam
+    - xanh tím
+    - xanh đen
+    - trắng xám
+    - trắng cam
+    - trắng tím
+    - xám cam
+    - xám tím
+    - cam tím
     - tiêu chuẩn
     - đặc biệt
     - cao cấp
@@ -34,7 +63,95 @@ nlu:
     - xe tay ga
     - xe côn tay
     - xe số
+    - 20 triệu
+    - 30 triệu
+    - 40 triệu
 
+# - lookup: color
+#   examples: |
+#     - đen
+#     - vàng
+#     - đỏ
+#     - xanh
+#     - trắng
+#     - xám
+#     - cam
+#     - tím
+#     - đen vàng
+#     - đen đỏ
+#     - đen xanh
+#     - đen trắng
+#     - đen xám
+#     - đen cam
+#     - đen tím
+#     - vàng đỏ
+#     - vàng xanh
+#     - vàng trắng
+#     - vàng xám
+#     - vàng cam
+#     - vàng tím
+#     - đỏ xanh
+#     - đỏ trắng
+#     - đỏ xám
+#     - đỏ cam
+#     - đỏ tím
+#     - xanh trắng
+#     - xanh xám
+#     - xanh cam
+#     - xanh tím
+#     - trắng xám
+#     - trắng cam
+#     - trắng tím
+#     - xám cam
+#     - xám tím
+#     - cam tím
+
+# - lookup: version
+#   examples: |
+#     - tiêu chuẩn
+#     - đặc biệt
+#     - cao cấp
+
+# - lookup: brand
+#   examples: |
+#     - honda
+#     - yamaha
+#     - suzuki
+
+# - lookup: model
+#   examples: |
+#     - wave rsx
+#     - future
+#     - winner x
+#     - vision
+#     - sh
+#     - sh mode
+#     - exciter
+#     - raider
+
+# - lookup: spec
+#   examples: |
+#     - có phanh abs
+#     - không phanh abs
+#     - 2 lít
+#     - 2.5 lít
+
+# - lookup: warranty
+#   examples: |
+#     - bảo hành 1 năm
+#     - bảo hành 2 năm
+
+# - lookup: type
+#   examples: |
+#     - xe tay ga
+#     - xe côn tay
+#     - xe số
+
+# - lookup: maxprice
+#   examples: |
+#     - 20 triệu
+#     - 30 triệu
+#     - 40 triệu
 
 
 - intent: greet
@@ -178,6 +295,36 @@ nlu:
     - Tôi muốn mua một chiếc xe có màu [đen](color).
     - Tôi cần một chiếc xe có màu [cam](color).
     - Tôi muốn tìm một chiếc xe có màu [bạc](color).
+    - Tôi thích xe của tôi có màu [đen vàng](color).
+    - Tôi muốn mua một chiếc xe có màu [xanh đen](color).
+    - Tôi đang tìm một chiếc xe có màu [đỏ trắng](color).
+    - Tôi cần mua một chiếc xe có màu [cam tím](color).
+    - Tôi muốn xe của tôi có màu [xám xanh](color).
+    - Tôi đang tìm một chiếc xe có màu [trắng đen](color).
+    - Tôi muốn mua một chiếc xe có màu [vàng đỏ](color).
+    - Tôi cần một chiếc xe có màu [xanh cam](color).
+    - Tôi muốn tìm một chiếc xe có màu [tím xám](color).
+    - Tôi muốn mua một chiếc xe có màu [đen đỏ](color).
+    - Tôi đang tìm một chiếc xe có màu [đen xanh](color).
+    - Tôi cần mua một chiếc xe có màu [đen trắng](color).
+    - Tôi muốn xe của tôi có màu [đen xám](color).
+    - Tôi đang tìm một chiếc xe có màu [đen cam](color).
+    - Tôi muốn mua một chiếc xe có màu [đen tím](color).
+    - Tôi cần một chiếc xe có màu [vàng xanh](color).
+    - Tôi muốn tìm một chiếc xe có màu [vàng trắng](color).
+    - Tôi muốn mua một chiếc xe có màu [vàng xám](color).
+    - Tôi đang tìm một chiếc xe có màu [vàng cam](color).
+    - Tôi cần mua một chiếc xe có màu [vàng tím](color).
+    - Tôi muốn xe của tôi có màu [đỏ xám](color).
+    - Tôi cần xe màu [xanh đen](color).
+    - Tôi đang tìm một chiếc xe có màu [đỏ cam](color).
+    - Tôi muốn mua một chiếc xe có màu [đỏ tím](color).
+    - Tôi cần một chiếc xe có màu [xanh trắng](color).
+    - Tôi muốn tìm một chiếc xe có màu [xanh tím](color).
+    - Tôi muốn mua một chiếc xe có màu [trắng cam](color).
+    - Tôi đang tìm một chiếc xe có màu [trắng tím](color).
+    - Tôi cần mua một chiếc xe có màu [xám cam](color).
+    - Tôi muốn xe của tôi có màu [xám tím](color).
     - Tôi muốn xe phiên bản [tiêu chuẩn](version).
     - Tôi đang tìm xe phiên bản [đặc biệt](version).
     - Tôi cần xe phiên bản [cao cấp](version).
@@ -415,6 +562,38 @@ nlu:
     - Tôi đang tìm [xe số](type) cho bố mẹ.
     - Tôi muốn sở hữu một chiếc [xe tay ga](type) sang trọng.
     - Tôi cần [xe côn tay](type) để đi học.
+    - Tôi cần xe không quá [30 triệu](maxprice).
+    - Tôi cần xe giá dưới [20 triệu](maxprice).
+    - Tôi muốn xe giá dưới [40 triệu](maxprice).
+    - Tôi muốn mua xe giá dưới [20 triệu](maxprice).
+    - Tôi đang tìm xe giá khoảng [40 triệu](maxprice).
+    - Tôi cần một chiếc xe giá không vượt quá [30 triệu](maxprice).
+    - Tôi muốn mua xe giá tầm [20 triệu](maxprice).
+    - Tôi đang tìm xe giá không quá [40 triệu](maxprice).
+    - Tôi cần xe giá dưới [30 triệu](maxprice).
+    - Tôi muốn mua xe giá không vượt quá [20 triệu](maxprice).
+    - Tôi đang tìm xe giá khoảng [30 triệu](maxprice).
+    - Tôi cần một chiếc xe giá dưới [40 triệu](maxprice).
+    - Tôi muốn mua một chiếc xe màu [vàng](color) giá dưới [30 triệu](maxprice).
+    - Tôi cần một chiếc xe của hãng [honda](brand) giá không quá [40 triệu](maxprice).
+    - Tôi đang tìm một chiếc xe dòng [sh mode](model) giá khoảng [20 triệu](maxprice).
+    - Tôi muốn sở hữu một chiếc xe loại [xe tay ga](type) giá dưới [30 triệu](maxprice).
+    - Tôi cần một chiếc xe có [phanh abs](brake) giá không vượt quá [40 triệu](maxprice).
+    - Tôi muốn mua một chiếc xe màu [đỏ](color) phiên bản [tiêu chuẩn](version) giá tầm [20 triệu](maxprice).
+    - Tôi đang tìm một chiếc xe của hãng [yamaha](brand) giá dưới [30 triệu](maxprice).
+    - Tôi cần một chiếc xe dòng [future](model) giá không quá [40 triệu](maxprice).
+    - Tôi muốn sở hữu một chiếc xe loại [xe côn tay](type) giá khoảng [20 triệu](maxprice).
+    - Tôi cần một chiếc xe có [bảo hành 2 năm](warranty) giá dưới [30 triệu](maxprice).
+    - Tôi muốn mua một chiếc xe màu [xanh](color) phiên bản [cao cấp](version) giá không vượt quá [40 triệu](maxprice).
+    - Tôi đang tìm một chiếc xe của hãng [suzuki](brand) giá tầm [20 triệu](maxprice).
+    - Tôi cần một chiếc xe dòng [winner x](model) giá dưới [30 triệu](maxprice).
+    - Tôi muốn sở hữu một chiếc xe loại [xe số](type) giá không quá [40 triệu](maxprice).
+    - Tôi cần một chiếc xe có [phanh abs](brake) và [bảo hành 1 năm](warranty) giá khoảng [20 triệu](maxprice).
+    - Tôi muốn mua một chiếc xe màu [trắng](color) phiên bản [đặc biệt](version) giá dưới [30 triệu](maxprice).
+    - Tôi đang tìm một chiếc xe của hãng [honda](brand) dòng [vision](model) giá không vượt quá [40 triệu](maxprice).
+    - Tôi cần một chiếc xe loại [xe tay ga](type) giá tầm [20 triệu](maxprice).
+    - Tôi muốn sở hữu một chiếc xe có [phanh abs](brake) giá dưới [30 triệu](maxprice).
+    - Tôi cần một chiếc xe màu [xám](color) phiên bản [tiêu chuẩn](version) giá không quá [40 triệu](maxprice).
     - Tôi muốn mua một chiếc xe màu [vàng](color) phiên bản [tiêu chuẩn](version).
     - Tôi cần một chiếc xe của hãng [honda](brand) dòng [sh mode](model).
     - Tôi đang tìm một chiếc xe có [phanh abs](brake) và [bảo hành 2 năm](warranty).

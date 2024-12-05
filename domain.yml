@@ -41,6 +41,7 @@ responses:
       - Loại phanh: {brake}
       - Bảo hành: {warranty}
       - Loại xe: {type}
+      - Giá tối đa : {maxprice}
       Bạn còn muốn thêm thông tin nào không? 
 
 entities:
@@ -52,6 +53,7 @@ entities:
   - brake
   - warranty
   - type
+  - maxprice 
   - vehicle_information
 
 slots:
@@ -110,6 +112,13 @@ slots:
     mappings:
       - type: from_entity
         entity: type
+  
+  maxprice:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: maxprice
 
   vehicle_information:
     type: list

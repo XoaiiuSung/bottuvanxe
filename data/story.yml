@@ -13,6 +13,7 @@ stories:
           - brake: "không phanh abs"
           - warranty: "2 năm"
           - type: "xe côn tay"
+          - maxprice: "30 triệu"
       - slot_was_set:
           - color: "đỏ"
           - version: "tiêu chuẩn"
@@ -22,6 +23,7 @@ stories:
           - brake: "không phanh abs"
           - warranty: "2 năm"
           - type: "xe côn tay"
+          - maxprice: "30 triệu"
       - action: action_convert_cc_to_phan_khoi
       - action: action_check_slots
       #- action: utter_vehicle_information
