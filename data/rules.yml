@@ -17,6 +17,11 @@ rules:
   - intent: greet
   - action: utter_greet
 
+- rule: Respond to search_vehicle intent
+  steps:
+  - intent: search_vehicle
+  - action: utter_search_vehicle
+
 # - rule: search_vehicle_information
 #   steps:
 #     - intent: provide_vehicle_information

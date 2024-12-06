@@ -1,3 +1,5 @@
 /chatbot/
 .rasa/
+.history/
+models/
 

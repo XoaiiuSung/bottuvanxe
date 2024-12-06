@@ -44,6 +44,18 @@ responses:
       - Giá tối đa : {maxprice}
       Bạn còn muốn thêm thông tin nào không? 
 
+  utter_search_vehicle:
+    - text: "Bạn đang cần tìm mẫu xe nào? Vui lòng cho tôi biết thêm thông tin."
+    - text: "Bạn đang tìm mua xe gì ạ? Hãy cung cấp thêm thông tin để tôi hỗ trợ."
+    - text: "Bạn muốn tìm xe nào? Vui lòng chia sẻ thêm để tôi tư vấn tốt hơn."
+    - text: "Bạn có thể cho tôi biết rõ hơn về mẫu xe bạn muốn tìm không?"
+    - text: "Vui lòng cung cấp thêm thông tin về chiếc xe bạn cần tìm."
+    - text: "Bạn đang tìm xe nào ạ? Tôi sẽ hỗ trợ ngay khi bạn chia sẻ thêm chi tiết."
+    - text: "Để tôi hỗ trợ tốt hơn, bạn vui lòng cho biết thêm về loại xe bạn đang cần tìm."
+    - text: "Bạn có thể cung cấp thêm thông tin về mẫu xe bạn đang quan tâm không?"
+    - text: "Bạn đang tìm mua xe gì? Chia sẻ thêm để tôi hỗ trợ nhé!"
+    - text: "Vui lòng cho tôi biết thêm thông tin về chiếc xe bạn muốn tìm ạ."
+
 entities:
   - color
   - version

@@ -40,3 +40,8 @@ action_endpoint:
 #  username: username
 #  password: password
 #  queue: queue
+
+
+# rasa train
+# rasa shell (train & shell chung 1 terminal)
+# rasa run actions --auto-reload

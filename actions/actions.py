@@ -38,7 +38,7 @@ class DatabaseHandler:
             "SERVER=localhost;"  # or "SERVER_NAME\INSTANCE_NAME" for named instances
             "DATABASE=QLBANXE;"
             "UID=sa;"  # replace with your username
-            "PWD=2710;"  # replace with your password
+            "PWD=kc;"  # replace with your password
         )
 
     def fetch_data(self):

@@ -67,6 +67,19 @@ nlu:
     - 30 triệu
     - 40 triệu
 
+- lookup: version
+  examples: |
+    - tiêu chuẩn
+    - đặc biệt
+    - cao cấp
+    - thể thao
+    
+- lookup: brand
+  examples: |
+    - honda
+    - yamaha
+    - suzuki
+
 # - lookup: color
 #   examples: |
 #     - đen
@@ -170,6 +183,12 @@ nlu:
     - xin chào các bạn
     - hello
     - hi
+    - alo
+    - tôi cần giúp 
+    - tôi cần hỗ trợ 
+    - tôi cần tư vấn
+    - tôi cần hỗ trợ mua xe
+
 
 - intent: goodbye
   examples: |
@@ -192,6 +211,12 @@ nlu:
     - tất nhiên
     - nghe hay đấy
     - chính xác
+    - ok 
+    - okay
+    - okla
+    - okie
+    - oki
+    - à ok
 
 - intent: deny
   examples: |
@@ -219,29 +244,51 @@ nlu:
     - rất tốt
     - rất hoàn hảo
 
-- intent: mood_unhappy
-  examples: |
-    - ngày của tôi thật tồi tệ
-    - tôi buồn
-    - tôi không cảm thấy khỏe
-    - tôi thất vọng
-    - rất buồn
-    - tôi rất buồn
-    - buồn
-    - rất buồn
-    - không vui
-    - không tốt
-    - không rất tốt
-    - cực kỳ buồn
-    - quá buồn
-    - rất buồn
-
 - intent: bot_challenge
   examples: |
     - bạn có phải là bot không?
     - bạn có phải là người không?
     - tôi đang nói chuyện với bot phải không?
     - tôi đang nói chuyện với người phải không?
+    - tôi đang nói chuyện với ai
+    - bạn là ai
+    - bạn là bot phải không
+    - bạn là người phải không
+    - bạn là ai vậy
+    - bạn là
+    - bạn là bot
+    - bạn là người
+    - bạn là ai vậy
+    - ai đó
+    - ai đấy 
+    - ai vậy
+
+
+- intent: search_vehicle
+  examples: |
+    - Tôi cần mua một chiếc xe mới
+    - Tôi cần mua một chiếc xe
+    - Tôi muốn tìm một chiếc xe tốt
+    - Mình đang muốn mua xe
+    - Tôi muốn tìm xe
+    - Có mẫu xe nào phù hợp không?
+    - Mình cần tư vấn mua xe
+    - Có mẫu xe nào để mua không?
+    - Tìm mua xe, bạn có gợi ý không?
+    - Bạn có thể giúp tôi tìm xe không?
+    - Có mẫu xe nào mới không?
+    - Cần tìm mẫu xe tốt nhất
+    - Tôi đang muốn mua xe máy
+    - Tôi muốn tham khảo giá xe
+    - Cần gợi ý về xe để mua
+    - Tìm mua một chiếc xe
+    - Mình đang cần tìm xe phù hợp
+    - Có xe nào bán không?
+    - Tôi muốn biết các mẫu xe hiện tại
+    - Gợi ý giúp mình một mẫu xe
+    - Mình đang tìm mua một chiếc xe đẹp
+    - Tôi muốn mua một chiếc xe sang
+    - Bạn có thể tư vấn xe cho tôi không?
 
 
 - intent: provide_vehicle_information
@@ -432,7 +479,7 @@ nlu:
     - Tôi muốn xe như [sirius](model).
     - Tôi đang cần xe dòng [raider](model).
     - Tôi cần xe như [wave rsx](model).
-    - Tôi muốn mua xe [future](model).
+    - Tôi muốn mua xe [future](model).  
     - Tôi muốn xe [air blade](model).
     - Tôi cần một chiếc xe như [air blade](model).
     - Tôi đang tìm dòng xe [air blade](model).
