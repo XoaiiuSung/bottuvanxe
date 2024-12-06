@@ -9,10 +9,11 @@ intents:
   - mood_unhappy
   - bot_challenge
   - provide_vehicle_information
+  - reset_slots
 
 responses:
   utter_greet:
-  - text: "Xin chào! Tôi có thể giúp gì cho bạn?"
+  - text: "Xin chào! Hãy cung cấp cho tôi thông tin về chiếc xe mà bạn mong muốn!"
 
   utter_cheer_up:
   - text: "Đây là một hình ảnh vui vẻ dành cho bạn!"
@@ -38,6 +39,7 @@ responses:
       - Hãng: {brand}
       - Dòng xe: {model}
       - Thông số: {spec}
+      - Tiêu thụ (lít/100km): {fuelConsumption}
       - Loại phanh: {brake}
       - Bảo hành: {warranty}
       - Loại xe: {type}
@@ -50,6 +52,7 @@ entities:
   - brand
   - model
   - spec
+  - fuelConsumption
   - brake
   - warranty
   - type
@@ -92,6 +95,13 @@ slots:
       - type: from_entity
         entity: spec
 
+  fuelConsumption:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: fuelConsumption
+
   brake:
     type: text
     influence_conversation: true
@@ -130,6 +140,7 @@ slots:
 actions:
   - action_convert_cc_to_phan_khoi
   - action_check_slots
+  - action_reset_slots  
 
 session_config:
   session_expiration_time: 60

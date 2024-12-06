@@ -95,6 +95,7 @@ class ActionCheckSlots(Action):
         brand = tracker.get_slot('brand')
         model = tracker.get_slot('model')
         spec = tracker.get_slot('spec')
+        fuelConsumption = tracker.get_slot('fuelConsumption')
         brake = tracker.get_slot('brake')
         warranty = tracker.get_slot('warranty')
         type = tracker.get_slot('type')
@@ -112,6 +113,8 @@ class ActionCheckSlots(Action):
             info.append(f"- Dòng xe: {model}")
         if spec:
             info.append(f"- Thông số: {spec}")
+        if fuelConsumption:
+            info.append(f"- Tiêu thụ: {fuelConsumption}")    
         if brake:
             info.append(f"- Loại phanh: {brake}")
         if warranty:
@@ -127,6 +130,7 @@ class ActionCheckSlots(Action):
         print(f"Dữ liệu slot 'brand': {brand}")
         print(f"Dữ liệu slot 'model': {model}")
         print(f"Dữ liệu slot 'spec': {spec}")
+        print(f"Dữ liệu slot 'fuelConsumption': {fuelConsumption}")
         print(f"Dữ liệu slot 'brake': {brake}")
         print(f"Dữ liệu slot 'warranty': {warranty}")
         print(f"Dữ liệu slot 'type': {type}")
@@ -143,21 +147,22 @@ class ActionCheckSlots(Action):
         
         return []
 
-# class ActionResetSlots(Action):
-#     def name(self) -> str:
-#         return "action_reset_slots"
+class ActionResetSlots(Action):
 
-#     def run(self, dispatcher: CollectingDispatcher,
-#             tracker: Tracker,
-#             domain: dict) -> list:
+    def name(self) -> str:
+        return "action_reset_slots"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: dict) -> list:
         
-#         # Lấy danh sách các slot hiện tại
-#         slots = tracker.slots.keys()
+        # Lấy danh sách các slot hiện tại
+        slots = tracker.slots.keys()
         
-#         # Tạo danh sách các sự kiện để đặt lại giá trị của các slot về None
-#         reset_events = [SlotSet(slot, None) for slot in slots]
+        # Tạo danh sách các sự kiện để đặt lại giá trị của các slot về None
+        reset_events = [SlotSet(slot, None) for slot in slots]
         
-#         dispatcher.utter_message(text="Tất cả thông tin đã được xóa. Bạn có thể bắt đầu lại từ đầu.")
+        dispatcher.utter_message(text="Tôi đã xóa hết thông tin hiện tại. Hãy cung cấp lại thông tin cho tôi.")
         
-#         return reset_events
+        return reset_events
 

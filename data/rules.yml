@@ -17,14 +17,12 @@ rules:
   - intent: greet
   - action: utter_greet
 
-# - rule: search_vehicle_information
-#   steps:
-#     - intent: provide_vehicle_information
-#     - action: action_provide_vehicle_information
+- rule: Reset slots
+  steps:
+    - intent: reset_slots
+    - action: action_reset_slots
 
-
-# - rule: search_vehicle_information
+# - rule: update vehicle infomation
 #   steps:
-#       - intent: provide_vehicle_information
-#       - action: action_convert_cc_to_phan_khoi
-#       - action: utter_vehicle_information
+#     - intent: provide
+#     - action: action_reset_slots

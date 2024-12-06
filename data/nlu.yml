@@ -1,71 +1,71 @@
 version: "3.1"
 
 nlu:
-- lookup: vehicle_information
-  examples: |
-    - đen
-    - vàng
-    - đỏ
-    - xanh
-    - trắng
-    - xám
-    - cam
-    - tím
-    - đen vàng
-    - đen đỏ
-    - đen xanh
-    - đen trắng
-    - đen xám
-    - đen cam
-    - đen tím
-    - vàng đỏ
-    - vàng xanh
-    - vàng trắng
-    - vàng xám
-    - vàng cam
-    - vàng tím
-    - đỏ xanh
-    - đỏ trắng
-    - đỏ xám
-    - đỏ cam
-    - đỏ tím
-    - xanh trắng
-    - xanh xám
-    - xanh cam
-    - xanh tím
-    - xanh đen
-    - trắng xám
-    - trắng cam
-    - trắng tím
-    - xám cam
-    - xám tím
-    - cam tím
-    - tiêu chuẩn
-    - đặc biệt
-    - cao cấp
-    - honda
-    - yamaha
-    - suzuki
-    - wave rsx
-    - future
-    - winner x
-    - vision
-    - sh
-    - sh mode
-    - exciter
-    - raider
-    - có phanh abs
-    - không phanh abs
-    - 2 lít
-    - 2.5 lít 
-    - bảo hành 1 năm
-    - bảo hành 2 năm
-    - xe tay ga
-    - xe côn tay
-    - xe số
-    - 20 triệu
-    - 30 triệu
-    - 40 triệu
+# - lookup: vehicle_information
+#   examples: |
+#     - đen
+#     - vàng
+#     - đỏ
+#     - xanh
+#     - trắng
+#     - xám
+#     - cam
+#     - tím
+#     - đen vàng
+#     - đen đỏ
+#     - đen xanh
+#     - đen trắng
+#     - đen xám
+#     - đen cam
+#     - đen tím
+#     - vàng đỏ
+#     - vàng xanh
+#     - vàng trắng
+#     - vàng xám
+#     - vàng cam
+#     - vàng tím
+#     - đỏ xanh
+#     - đỏ trắng
+#     - đỏ xám
+#     - đỏ cam
+#     - đỏ tím
+#     - xanh trắng
+#     - xanh xám
+#     - xanh cam
+#     - xanh tím
+#     - xanh đen
+#     - trắng xám
+#     - trắng cam
+#     - trắng tím
+#     - xám cam
+#     - xám tím
+#     - cam tím
+#     - tiêu chuẩn
+#     - đặc biệt
+#     - cao cấp
+#     - honda
+#     - yamaha
+#     - suzuki
+#     - wave rsx
+#     - future
+#     - winner x
+#     - vision
+#     - sh
+#     - sh mode
+#     - exciter
+#     - raider
+#     - có phanh abs
+#     - không phanh abs
+#     - 2.3
+#     - 2.1
+#     - bảo hành 1 năm
+#     - bảo hành 2 năm
+#     - xe tay ga
+#     - xe côn tay
+#     - xe số
+#     - 20 triệu
+#     - 30 triệu
+#     - 40 triệu
 
 # - lookup: color
 #   examples: |
@@ -99,6 +99,7 @@ nlu:
 #     - xanh xám
 #     - xanh cam
 #     - xanh tím
+#     - xanh đen
 #     - trắng xám
 #     - trắng cam
 #     - trắng tím
@@ -131,10 +132,19 @@ nlu:
 
 # - lookup: spec
 #   examples: |
+#     - 100cc
+#     - 200cc
+#     - 150 phân khối
+
+# - lookup: fuelConsumption
+#   examples: |
+#     - 2.3
+#     - 2.1
+
+# - lookup: brake
+#   examples: |
 #     - có phanh abs
 #     - không phanh abs
-#     - 2 lít
-#     - 2.5 lít
 
 # - lookup: warranty
 #   examples: |
@@ -152,6 +162,10 @@ nlu:
 #     - 20 triệu
 #     - 30 triệu
 #     - 40 triệu
+#     - 50 triệu
+#     - 60 triệu
+#     - 70 triệu
+
 
 
 - intent: greet
@@ -242,6 +256,14 @@ nlu:
     - bạn có phải là người không?
     - tôi đang nói chuyện với bot phải không?
     - tôi đang nói chuyện với người phải không?
+
+- intent: reset_slots
+  examples: |
+    - tôi muốn thêm thông tin lại từ đầu
+    - hãy xóa hết thông tin hiện tại
+    - tôi muốn bắt đầu lại
+    - xóa hết thông tin
+    - bắt đầu lại từ đầu
 
 
 - intent: provide_vehicle_information
@@ -402,29 +424,28 @@ nlu:
     - Tôi cần một chiếc xe có [phanh abs](brake).
     - Xe không cần phanh abs, tôi muốn xe [không phanh abs](brake).
     - Tôi cần xe [không phanh abs](brake).
+    - Tôi muốn mua xe [không phanh abs](brake).
     - Tôi không muốn xe có [phanh abs](brake).
     - Xe của tôi không cần [phanh abs](brake).
     - Tôi thích xe [không phanh abs](brake).
     - Tôi sẽ mua xe [không phanh abs](brake).
     - Xe [không phanh abs](brake) là lựa chọn của tôi.
     - Tôi muốn xe [không phanh abs](brake).
-    - Xe không cần [phanh abs](brake).
-    - Tôi không cần xe có [phanh abs](brake).
-    - Tôi muốn xe tốn [2 lít](fuel_consumption) đi được 100km.
-    - Tôi cần xe tiêu thụ khoảng [2.5 lít](fuel_consumption) nhiên liệu cho mỗi 100km.
-    - Xe của tôi tiêu thụ [3 lít](fuel_consumption) nhiên liệu cho mỗi 100km.
-    - Tôi thích xe tiêu thụ [1.8 lít](fuel_consumption) nhiên liệu cho mỗi 100km.
-    - Xe này tiêu thụ [2.2 lít](fuel_consumption) nhiên liệu cho mỗi 100km.
-    - Tôi muốn mua xe tiêu thụ [2.7 lít](fuel_consumption) nhiên liệu cho mỗi 100km.
-    - Xe tiêu thụ [2.3 lít](fuel_consumption) nhiên liệu cho mỗi 100km là tốt nhất.
-    - Tôi cần xe tiêu thụ [2.1 lít](fuel_consumption) nhiên liệu cho mỗi 100km.
-    - Xe của tôi tiêu thụ [2.6 lít](fuel_consumption) nhiên liệu cho mỗi 100km.
-    - Tôi muốn xe tiêu thụ [2.4 lít](fuel_consumption) nhiên liệu cho mỗi 100km.
-    - Xe này tiêu thụ [2.9 lít](fuel_consumption) nhiên liệu cho mỗi 100km.
-    - Tôi thích xe tiêu thụ [3.1 lít](fuel_consumption) nhiên liệu cho mỗi 100km.
-    - Xe tiêu thụ [2.8 lít](fuel_consumption) nhiên liệu cho mỗi 100km là lựa chọn của tôi.
-    - Tôi cần xe tiêu thụ [2.0 lít](fuel_consumption) nhiên liệu cho mỗi 100km.
-    - Xe của tôi tiêu thụ [3.2 lít](fuel_consumption) nhiên liệu cho mỗi 100km.
+    - Tôi muốn xe tiêu thụ [2.76 lít/100km](fuelConsumption).
+    - Xe tôi cần tiêu thụ [3.5 lít/100km](fuelConsumption).
+    - Tôi cần một chiếc xe tiêu thụ [4.2 lít/100km](fuelConsumption).
+    - Tôi muốn tìm xe tiêu thụ [5.0 lít/100km](fuelConsumption).
+    - Xe tôi muốn tiêu thụ [3.8 lít/100km](fuelConsumption).
+    - Tôi cần xe tiêu thụ [2.9 lít/100km](fuelConsumption).
+    - Tôi muốn xe của mình tiêu thụ [3.3 lít/100km](fuelConsumption).
+    - Xe tôi cần phải tiêu thụ [4.0 lít/100km](fuelConsumption).
+    - Tôi muốn một chiếc xe tiêu thụ [3.1 lít/100km](fuelConsumption).
+    - Tôi cần xe tiêu thụ [2.5 lít/100km](fuelConsumption).
+    - Xe tôi muốn tiêu thụ [3.7 lít/100km](fuelConsumption).
+    - Tôi muốn xe tiêu thụ [4.5 lít/100km](fuelConsumption).
+    - Tôi cần một chiếc xe tiêu thụ [3.0 lít/100km](fuelConsumption).
+    - Xe tôi cần tiêu thụ [2.8 lít/100km](fuelConsumption).
+    - Tôi muốn tìm xe tiêu thụ [3.6 lít/100km](fuelConsumption).
     - Tôi muốn xe [winner x](model).
     - Tôi cần một chiếc xe như [vision](model).
     - Tôi đang tìm dòng xe [sh mode](model).
@@ -712,6 +733,43 @@ nlu:
     - Tôi đang tìm xe [yamaha](brand), màu [xanh dương](color), model [exciter](model), công suất [125 cc](spec), và bảo hành [1 năm](warranty).
     - Xe tôi muốn là chiếc xe [honda](brand), màu [vàng](color), model [sh mode](model), công suất [250 cc](spec), và có [phanh abs](brake), bảo hành [2 năm](warranty).
     - Tôi cần xe [yamaha](brand), màu [xanh](color), model [exciter](model), công suất [100 phân khối](spec), và bảo hành [2 năm](warranty).
-
+    - Tôi cần xe có màu [xám](color), bảo hành [1 năm](warranty), và [không phanh abs](brake), tiêu thụ [2.3 lít/100km](fuelConsumption).
+    - Xe tôi cần có màu [vàng](color), bảo hành [2 năm](warranty), và [không phanh abs](brake), tiêu thụ [2.1 lít/100km](fuelConsumption).
+    - Tôi cần xe màu [đen](color), bảo hành [2 năm](warranty), và [không phanh abs](brake), tiêu thụ [2.3 lít/100km](fuelConsumption).
+    - Xe tôi muốn là [honda](brand), màu [trắng](color), và [không phanh abs](brake), tiêu thụ [2.1 lít/100km](fuelConsumption).
+    - Tôi muốn xe [yamaha](brand), màu [xanh dương](color), và [không phanh abs](brake), tiêu thụ [2.3 lít/100km](fuelConsumption).
+    - Tôi cần xe [suzuki](brand), màu [đỏ](color), bảo hành [1 năm](warranty), và [không phanh abs](brake), tiêu thụ [2.1 lít/100km](fuelConsumption).
+    - Xe tôi cần là [honda](brand), màu [xám](color), và [100 phân khối](spec), tiêu thụ [2.3 lít/100km](fuelConsumption).
+    - Tôi muốn xe có màu [trắng](color), bảo hành [2 năm](warranty), và [không phanh abs](brake), tiêu thụ [2.1 lít/100km](fuelConsumption).
+    - Xe tôi cần có màu [vàng](color), bảo hành [1 năm](warranty), và [150 cc](spec), tiêu thụ [2.3 lít/100km](fuelConsumption).
+    - Tôi cần xe màu [xanh](color), bảo hành [1 năm](warranty), và [không phanh abs](brake), tiêu thụ [2.1 lít/100km](fuelConsumption).
+    - Xe tôi cần là [yamaha](brand), màu [đen](color), và [không phanh abs](brake), tiêu thụ [2.3 lít/100km](fuelConsumption).
+    - Tôi muốn xe có màu [xanh lá](color), bảo hành [2 năm](warranty), và [không phanh abs](brake), tiêu thụ [2.1 lít/100km](fuelConsumption).
+    - Tôi cần xe màu [trắng](color), bảo hành [1 năm](warranty), và [không phanh abs](brake), tiêu thụ [2.3 lít/100km](fuelConsumption).
+    - Xe tôi cần là [suzuki](brand), màu [vàng](color), bảo hành [2 năm](warranty), và [không phanh abs](brake), tiêu thụ [2.1 lít/100km](fuelConsumption).
+    - Tôi cần xe có màu [xám](color), bảo hành [2 năm](warranty), và [không phanh abs](brake), tiêu thụ [2.3 lít/100km](fuelConsumption).
+    - Xe tôi cần có màu [đỏ](color), bảo hành [1 năm](warranty), và [150 cc](spec), tiêu thụ [2.1 lít/100km](fuelConsumption).
+    - Tôi muốn xe có màu [vàng](color), bảo hành [1 năm](warranty), và [100 phân khối](spec), tiêu thụ [2.3 lít/100km](fuelConsumption).
+    - Xe tôi cần có màu [đen](color), bảo hành [1 năm](warranty), và [không phanh abs](brake), tiêu thụ [2.1 lít/100km](fuelConsumption).
+    - Tôi cần xe có màu [xanh](color), bảo hành [2 năm](warranty), và [không phanh abs](brake), tiêu thụ [2.3 lít/100km](fuelConsumption).
+    - Xe tôi muốn là [yamaha](brand), màu [vàng](color), và [không phanh abs](brake), tiêu thụ [2.1 lít/100km](fuelConsumption).
+    - Tôi cần xe màu [trắng](color), bảo hành [2 năm](warranty), và [100 phân khối](spec), tiêu thụ [2.3 lít/100km](fuelConsumption).
+    - Tôi muốn xe có màu [xanh dương](color), bảo hành [1 năm](warranty), và [không phanh abs](brake), tiêu thụ [2.1 lít/100km](fuelConsumption).
+    - Xe tôi cần là [suzuki](brand), màu [xám](color), và [không phanh abs](brake), tiêu thụ [2.3 lít/100km](fuelConsumption).
+    - Tôi muốn xe có màu [đỏ](color), bảo hành [1 năm](warranty), và [không phanh abs](brake), tiêu thụ [2.1 lít/100km](fuelConsumption).
+    - Xe tôi cần có màu [xanh lá](color), bảo hành [2 năm](warranty), và [không phanh abs](brake), tiêu thụ [2.3 lít/100km](fuelConsumption).
+    - Tôi cần xe màu [vàng](color), bảo hành [1 năm](warranty), và [không phanh abs](brake), tiêu thụ [2.1 lít/100km](fuelConsumption).
+    - Tôi cần một chiếc xe [honda](brand), màu [vàng](color), [150 phân khối](spec), phiên bản [tiêu chuẩn](version), có [phanh abs](brake), bảo hành [2 năm](warranty), tiêu thụ [2.3 lít/100km](fuelConsumption).
+    - Xe tôi cần là một chiếc [yamaha](brand), màu [xanh](color), model [exciter](model), công suất [125 cc](spec), không có [phanh abs](brake), bảo hành [1 năm](warranty), tiêu thụ [2.1 lít/100km](fuelConsumption).
+    - Tôi muốn một chiếc [honda](brand), màu [trắng](color), model [sh mode](model), công suất [100 phân khối](spec), phiên bản [đặc biệt](version), có [phanh abs](brake), bảo hành [1 năm](warranty), tiêu thụ [2.3 lít/100km](fuelConsumption).
+    - Tôi đang tìm xe [suzuki](brand), màu [xám](color), model [raider](model), [200 phân khối](spec), có [phanh abs](brake), phiên bản [tiêu chuẩn](version), bảo hành [2 năm](warranty), tiêu thụ [2.1 lít/100km](fuelConsumption).
+    - Xe tôi muốn là một chiếc [yamaha](brand), màu [đỏ](color), model [fzs](model), công suất [250 cc](spec), phiên bản [cao cấp](version), không có [phanh abs](brake), bảo hành [2 năm](warranty), tiêu thụ [2.3 lít/100km](fuelConsumption).
+    - Tôi cần một chiếc xe [honda](brand), màu [xanh dương](color), model [wave rsx](model), [125 cc](spec), không có [phanh abs](brake), bảo hành [1 năm](warranty), tiêu thụ [2.1 lít/100km](fuelConsumption).
+    - Tôi muốn xe [suzuki](brand), màu [đen](color), model [satria](model), công suất [100 phân khối](spec), phiên bản [đặc biệt](version), có [phanh abs](brake), bảo hành [2 năm](warranty), tiêu thụ [2.3 lít/100km](fuelConsumption).
+    - Xe tôi cần là một chiếc [honda](brand), màu [vàng](color), model [sonic](model), [150 phân khối](spec), không có [phanh abs](brake), bảo hành [1 năm](warranty), tiêu thụ [2.1 lít/100km](fuelConsumption).
+    - Tôi đang tìm xe [yamaha](brand), màu [xanh lá](color), model [tmax](model), [200 phân khối](spec), phiên bản [tiêu chuẩn](version), có [phanh abs](brake), bảo hành [1 năm](warranty), tiêu thụ [2.3 lít/100km](fuelConsumption).
+    - Xe tôi cần là một chiếc [suzuki](brand), màu [trắng](color), model [gsx r150](model), công suất [150 cc](spec), phiên bản [cao cấp](version), có [phanh abs](brake), bảo hành [2 năm](warranty), tiêu thụ [2.1 lít/100km](fuelConsumption).
+    - Tôi cần một chiếc xe [honda](brand), màu [xám](color), model [future](model), [125 cc](spec), phiên bản [tiêu chuẩn](version), không có [phanh abs](brake), bảo hành [1 năm](warranty), tiêu thụ [2.3 lít/100km](fuelConsumption).
+    - Xe tôi muốn là một chiếc [yamaha](brand), màu [vàng](color), model [exciter](model), công suất [100 phân khối](spec), có [phanh abs](brake), bảo hành [2 năm](warranty), tiêu thụ [2.1 lít/100km](fuelConsumption).
 
  
