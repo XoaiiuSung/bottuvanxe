@@ -104,25 +104,25 @@ class ActionCheckSlots(Action):
         # Tạo danh sách các thông tin đã được cung cấp
         info = []
         if color:
-            info.append(f"- Màu sắc: {color}")
+            info.append(f"màu sắc: {color}")
         if version:
-            info.append(f"- Phiên bản: {version}")
+            info.append(f"phiên bản: {version}")
         if brand:
-            info.append(f"- Hãng: {brand}")
+            info.append(f"hãng: {brand}")
         if model:
-            info.append(f"- Dòng xe: {model}")
+            info.append(f"dòng xe: {model}")
         if spec:
-            info.append(f"- Thông số: {spec}")
+            info.append(f"thông số: {spec}")
         if fuelConsumption:
-            info.append(f"- Tiêu thụ: {fuelConsumption}")    
+            info.append(f"tiêu thụ: {fuelConsumption}")    
         if brake:
-            info.append(f"- Loại phanh: {brake}")
+            info.append(f"loại phanh: {brake}")
         if warranty:
-            info.append(f"- Bảo hành: {warranty}")
+            info.append(f"bảo hành: {warranty}")
         if type:
-            info.append(f"- Loại xe: {type}")
+            info.append(f"loại xe: {type}")
         if maxprice:
-            info.append(f"- Giá tối đa: {maxprice}")
+            info.append(f"giá tối đa: {maxprice}")
 
         # In ra tất cả các thông tin từ các slot
         print(f"Dữ liệu slot 'color': {color}")
@@ -143,7 +143,13 @@ class ActionCheckSlots(Action):
             response = "Bạn chưa cung cấp đủ thông tin. Vui lòng cung cấp thêm chi tiết về xe bạn muốn tìm."
             dispatcher.utter_message(text=response)
         else:
-            dispatcher.utter_message(response="utter_vehicle_information")
+            response = (
+                "Bạn muốn tìm xe với các thông tin sau: "
+                + "; ".join(info)
+                + ". Bạn còn muốn thêm thông tin nào không?"
+            )
+            dispatcher.utter_message(text=response)
+            # dispatcher.utter_message(response="utter_vehicle_information")
         
         return []
 

@@ -13,7 +13,16 @@ intents:
 
 responses:
   utter_greet:
-  - text: "Xin chào! Hãy cung cấp cho tôi thông tin về chiếc xe mà bạn mong muốn!"
+  - text: "Xin chào, tôi có thể hỗ trợ gì cho bạn không ạ?"
+  - text: "Chào bạn đến với cửa hàng, tôi có thể làm gì để giúp bạn ạ?"
+  - text: "Xin chào, bạn đang cần hỗ trợ gì, tôi luôn sẵn sàng ạ!"
+  - text: "Chào bạn đến với cửa hàng! Tôi có thể giúp gì cho bạn ngay bây giờ ạ?"
+  - text: "Xin chào, tôi có thể hỗ trợ bạn tìm kiếm hay tư vấn điều gì không ạ?"
+  - text: "Chào bạn, tôi có thể giúp bạn với điều gì ạ?"
+  - text: "Xin chào, vui lòng cho tôi biết bạn cần hỗ trợ gì nhé!"
+  - text: "Chào bạn, tôi sẵn sàng phục vụ bạn. Bạn đang cần giúp gì ạ?"
+  - text: "Xin chào, có việc gì tôi có thể giúp bạn ngay lúc này không ạ?"
+  - text: "Chào bạn, tôi rất sẵn lòng giúp đỡ. Bạn muốn tư vấn về vấn đề gì ạ?"
 
   utter_cheer_up:
   - text: "Đây là một hình ảnh vui vẻ dành cho bạn!"
@@ -26,10 +35,18 @@ responses:
   - text: "Tuyệt vời! Hãy tiếp tục nhé!"
 
   utter_goodbye:
-  - text: "Tạm biệt! Hẹn gặp lại bạn."
+  - text: "Cảm ơn bạn đã liên hệ, hẹn gặp lại lần sau nhé!"
+  - text: "Chào tạm biệt, chúc bạn một ngày tuyệt vời!"
+  - text: "Tạm biệt! Nếu cần hỗ trợ thêm, đừng ngần ngại liên hệ nhé!"
+  - text: "Hẹn gặp lại bạn, chúc bạn mọi điều tốt lành!"
+  - text: "Rất vui vì đã được hỗ trợ bạn, tạm biệt và hẹn gặp lại!"
+  - text: "Tạm biệt! Rất mong được phục vụ bạn lần tới!"
+  - text: "Chào tạm biệt, mong bạn có một ngày thật tuyệt!"
+  - text: "Cảm ơn và hẹn gặp lại bạn trong lần hỗ trợ sau!"
+
 
   utter_iamabot:
-  - text: "Tôi là bot, được phát triển bởi Rasa."
+  - text: "Tôi là chatbot, được phát triển bởi Phú, Phi và Phương. Nhiệm vụ của tôi là hỗ trợ bạn tìm được mẫu xe ưng ý."
 
   utter_vehicle_information:
   - text: |
@@ -51,7 +68,6 @@ responses:
     - text: "Bạn đang tìm mua xe gì ạ? Hãy cung cấp thêm thông tin để tôi hỗ trợ."
     - text: "Bạn muốn tìm xe nào? Vui lòng chia sẻ thêm để tôi tư vấn tốt hơn."
     - text: "Bạn có thể cho tôi biết rõ hơn về mẫu xe bạn muốn tìm không?"
-    - text: "Vui lòng cung cấp thêm thông tin về chiếc xe bạn cần tìm."
     - text: "Bạn đang tìm xe nào ạ? Tôi sẽ hỗ trợ ngay khi bạn chia sẻ thêm chi tiết."
     - text: "Để tôi hỗ trợ tốt hơn, bạn vui lòng cho biết thêm về loại xe bạn đang cần tìm."
     - text: "Bạn có thể cung cấp thêm thông tin về mẫu xe bạn đang quan tâm không?"
