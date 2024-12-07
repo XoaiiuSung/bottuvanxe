@@ -25,60 +25,85 @@
 #         dispatcher.utter_message(text="Hello World!")
 #
 #         return []
-import re
+import pyodbc
+from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet
-import pyodbc
+    
+class ActionSearchVehicleDb(Action):
 
-class DatabaseHandler:
-    def __init__(self):
-        self.conn_str = (
-            "DRIVER={ODBC Driver 17 for SQL Server};"
-            "SERVER=localhost;"  # or "SERVER_NAME\INSTANCE_NAME" for named instances
-            "DATABASE=QLBANXE;"
-            "UID=sa;"  # replace with your username
-            "PWD=kc;"  # replace with your password
-        )
-
-    def fetch_data(self):
-        conn = pyodbc.connect(self.conn_str)
-        cursor = conn.cursor()
-        cursor.execute("SELECT * FROM XeTonKho")
-        rows = []
-        row = cursor.fetchone()
-        while row:
-            rows.append(row[5])
-            row = cursor.fetchone()
-        conn.close()
-        return rows
-
-class ActionConvertCcToPhanKhoi(Action):
-
-    def name(self) -> str:
-        return "action_convert_cc_to_phan_khoi"
+    def name(self) -> Text:
+        return "action_search_vehicle_db"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
-            domain: dict) -> list:
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
-        # Lấy giá trị của slot 'spec'
-        spec = tracker.get_slot('spec') 
-        print("Dữ liệu slot 'spec':", spec)
-        
-        slots = tracker.current_slot_values()
-        print("Các slot hiện tại:", slots)
-        
-        # Kiểm tra nếu spec có giá trị và chứa 'cc'
-        if spec and 'cc' in spec:
-            # Thực hiện chuyển đổi 'cc' thành 'phân khối'
-            updated_spec = re.sub(r'(\d+)\s?cc', r'\1 phân khối', spec)
-            # Cập nhật lại slot 'spec' với giá trị đã chuyển đổi
-            return [SlotSet('spec', updated_spec)]
+        # Collect slot values
+        color = tracker.get_slot('color') or ''
+        brand = tracker.get_slot('brand') or ''
+        spec = tracker.get_slot('spec') or ''
+        brake_type = tracker.get_slot('brake') or ''
+        version = tracker.get_slot('version') or ''
+        model = tracker.get_slot('model') or ''
+        fuelConsumption = tracker.get_slot('fuelConsumption') or ''
+        warranty = tracker.get_slot('warranty') or ''
+        maxprice = tracker.get_slot('maxprice') or ''
+        vehicle_type = tracker.get_slot('type') or ''
+
+        print(f"Slots: color={color}, brand={brand}, spec={spec}, brake_type={brake_type}, version={version}, model={model}, fuelConsumption={fuelConsumption}, warranty={warranty}, maxprice={maxprice}, vehicle_type={vehicle_type}")
+
+        # Truy vấn database
+        vehicle_links = self.query_vehicle_db(color, brand, spec, brake_type, version, model, fuelConsumption, warranty, maxprice, vehicle_type)
+
+        if vehicle_links:
+            dispatcher.utter_message(text=f"Bạn muốn tìm xe với các thông tin sau: {vehicle_links}")
         else:
-            # Nếu không có 'cc' trong spec, không cần thay đổi
-            return []
-        
+            dispatcher.utter_message(text="Không tìm thấy xe nào phù hợp với thông tin bạn cung cấp.")
+
+        return []
+
+    def query_vehicle_db(self, color, brand, spec, brake_type, version, model, fuelConsumption, warranty, maxprice, vehicle_type):
+        try:
+            # Kết nối tới db
+            conn = pyodbc.connect(
+                'DRIVER={ODBC Driver 17 for SQL Server};'
+                'SERVER=localhost;'
+                'DATABASE=QLBANXE;'
+                'UID=sa;'
+                'PWD=kc'
+            )
+            cursor = conn.cursor()
+
+            # Execute the stored procedure
+            cursor.execute("""
+                EXEC TimKiemXeTheoYeuCau @tenmau=?, @phienban=?, @hang=?, @dongxe=?, @phankhoi=?, @tieuthu=?, @phanhabs=?, @baohanh=?, @tenloai=?
+            """, (color, version, brand, model, spec, fuelConsumption, brake_type, warranty, vehicle_type))
+
+            results = cursor.fetchall()
+
+            print(f"Results: {results}")
+
+            # Close the connection
+            cursor.close()
+            conn.close()
+
+            if results:
+                print(f"Found {len(results)} vehicles.")
+                # Format the results as needed
+                links = []
+                for result in results:
+                    link = f"http://localhost:3000/{result.MaLoai}/{result.MaXe}-{result.MaPhienBan}?color={result.MaMau}"
+                    links.append(link)
+                return "; ".join(links)
+            else:
+                print("No vehicles found.")
+                return None
+
+        except pyodbc.Error as e:
+            print(f"Error connecting to SQL Server: {e}")
+            return None
 
 class ActionCheckSlots(Action):
 
@@ -100,6 +125,9 @@ class ActionCheckSlots(Action):
         warranty = tracker.get_slot('warranty')
         type = tracker.get_slot('type')
         maxprice = tracker.get_slot('maxprice')
+        
+        # Xử lý dữ liệu slot
+        spec = self.convert_engine_capacity(spec) 
         
         # Tạo danh sách các thông tin đã được cung cấp
         info = []
@@ -140,18 +168,71 @@ class ActionCheckSlots(Action):
         # Kiểm tra số lượng thông tin đã được cung cấp
         
         if len(info) < 1:
-            response = "Bạn chưa cung cấp đủ thông tin. Vui lòng cung cấp thêm chi tiết về xe bạn muốn tìm."
+            response = "Dạ bạn chưa cung cấp đủ thông tin ạ. Vui lòng cung cấp thêm chi tiết về xe bạn muốn tìm."
             dispatcher.utter_message(text=response)
         else:
             response = (
                 "Bạn muốn tìm xe với các thông tin sau: "
                 + "; ".join(info)
-                + ". Bạn còn muốn thêm thông tin nào không?"
+                + "."
             )
             dispatcher.utter_message(text=response)
             # dispatcher.utter_message(response="utter_vehicle_information")
         
         return []
+    
+    def convert_engine_capacity(self, text: str) -> str:
+        """
+        Chuyển đổi các ký hiệu dung tích động cơ từ '125cc' hoặc '125 cc' thành '125 phân khối'.
+        
+        Args:
+            text (str): Giá trị từ slot 'spec'
+
+        Returns:
+            str: Giá trị đã được chuyển đổi
+        """
+        if text:
+            # Tìm các giá trị khớp với mẫu như '125cc' hoặc '125 cc'
+            updated_text = re.sub(r'(\d+)\s?cc', r'\1 phân khối', text, flags=re.IGNORECASE)
+            return updated_text
+        return text
+
+class ActionAskForMoreInfo(Action):
+
+    def name(self) -> str:
+        return "action_ask_for_more_info"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: dict) -> list:
+        
+        dispatcher.utter_message(text="Bạn còn muốn thêm thông tin nào không?")
+        return []
+    
+class ActionThankForWaiting(Action):
+
+    def name(self) -> str:
+        return "action_thank_for_waiting"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: dict) -> list:
+        
+        dispatcher.utter_message(text="Dạ cảm ơn bạn đã chờ ạ!")
+        return []
+    
+class ActionConfirmVehicleInformation(Action):
+
+    def name(self) -> str:
+        return "action_confirm_vehicle_information"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: dict) -> list:
+        
+        dispatcher.utter_message(text="Cảm ơn bạn đã cung cấp thông tin. Tôi sẽ tìm kiếm thông tin về xe phù hợp nhất với yêu cầu của bạn.")
+        return []
+
 
 class ActionResetSlots(Action):
 

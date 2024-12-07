@@ -219,27 +219,22 @@ nlu:
 
 - intent: affirm
   examples: |
-    - vâng
     - có
-    - đúng vậy
-    - tất nhiên
-    - nghe hay đấy
-    - chính xác
-    - ok 
-    - okay
-    - okla
-    - okie
-    - oki
-    - à ok
+    - có nha
+    - tôi muốn thêm
+    - tôi muốn thêm thông tin
+    - có, tôi muốn thêm
+    - có nhé
 
 - intent: deny
   examples: |
     - không
-    - không bao giờ
-    - tôi không nghĩ vậy
-    - không thích điều đó
-    - không đời nào
-    - không chắc lắm
+    - không nha
+    - đủ rồi
+    - được rồi
+    - đủ rồi á
+    - được rồi á
+    - không cần
 
 - intent: mood_great
   examples: |

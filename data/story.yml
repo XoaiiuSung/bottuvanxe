@@ -4,30 +4,9 @@ stories:
 - story: search_vehicle_information
   steps:
       - intent: provide_vehicle_information
-      #   entities:
-      #     - color: "đỏ"
-      #     - version: "tiêu chuẩn"
-      #     - brand: "honda"
-      #     - model: "vision"
-      #     - spec: "100cc"
-      #     - fuelConsumption: "2 lít/100km"
-      #     - brake: "không phanh abs"
-      #     - warranty: "2 năm"
-      #     - type: "xe côn tay"
-      #     - maxprice: "30 triệu"
-      # - slot_was_set:
-      #     - color: "đỏ"
-      #     - version: "tiêu chuẩn"
-      #     - brand: "honda"
-      #     - model: "vision"
-      #     - spec: "100cc"
-      #     - fuelConsumption: "2 lít/100km"
-      #     - brake: "không phanh abs"
-      #     - warranty: "2 năm"
-      #     - type: "xe côn tay"
-      #     - maxprice: "30 triệu"
-      - action: action_convert_cc_to_phan_khoi
-      # - slot_was_set: 
-      #     - spec: "100 phân khối"
+      - action: action_thank_for_waiting
       - action: action_check_slots
-      #- action: utter_vehicle_information
+      - action: action_ask_for_more_info
+      - intent: deny
+      - action: action_confirm_vehicle_information
+      - action: action_search_vehicle_db

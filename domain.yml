@@ -166,10 +166,12 @@ slots:
         entity: vehicle_information
 
 actions:
-  - action_convert_cc_to_phan_khoi
   - action_check_slots
   - action_reset_slots  
-
+  - action_ask_for_more_info
+  - action_confirm_vehicle_information
+  - action_thank_for_waiting
+  - action_search_vehicle_db
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
