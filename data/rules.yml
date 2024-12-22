@@ -31,3 +31,16 @@ rules:
   steps: 
   - intent: thank
   - action: utter_response_thank
+
+# - rule: Handle provide_vehicle_information
+#   steps:
+#     - intent: provide_vehicle_information
+#     - action: action_thank_for_waiting
+#     - action: action_check_slots
+#     - action: action_ask_for_more_info
+
+# - rule: Handle request_vehicle_price
+#   steps:
+#     - intent: request_vehicle_price
+#     - action: action_ask_vehicle_name
+

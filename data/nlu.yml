@@ -179,7 +179,46 @@ nlu:
 #     - 60 triệu
 #     - 70 triệu
 
+- intent: request_vehicle_price
+  examples: |
+    - Tôi muốn tư vấn giá xe cũ
+    - Xin hãy định giá xe cũ cho tôi
+    - Tôi cần biết giá xe cũ
+    - Tư vấn giá xe cũ giúp tôi
 
+- intent: provide_vehicle_name
+  examples: |
+    - [wave rsx](vehicle_name)
+    - [future](vehicle_name)
+    - [winner x](vehicle_name)
+    - [vision](vehicle_name)
+    - [sh](vehicle_name)
+    - [sh mode](vehicle_name)
+    - [exciter](vehicle_name)
+    - [raider](vehicle_name)
+
+- intent: provide_vehicle_condition
+  examples: |
+    - [30](vehicle_condition)
+    - [40](vehicle_condition)
+    - [50](vehicle_condition)
+    - [60](vehicle_condition)
+    - [70](vehicle_condition)
+    - [80](vehicle_condition)
+    - [90](vehicle_condition)
+
+- intent: provide_vehicle_mileage
+  examples: |
+    - [5000](vehicle_mileage)
+    - [10000](vehicle_mileage)
+    - [20000](vehicle_mileage)
+    - [30000](vehicle_mileage)
+    - [40000](vehicle_mileage)
+    - [50000](vehicle_mileage)
+    - [60000](vehicle_mileage)
+    - [70000](vehicle_mileage)
+    - [80000](vehicle_mileage)
+    - [90000](vehicle_mileage)
 
 - intent: greet
   examples: |

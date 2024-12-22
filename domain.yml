@@ -10,6 +10,10 @@ intents:
   - bot_challenge
   - provide_vehicle_information
   - reset_slots
+  - request_vehicle_price
+  - provide_vehicle_name
+  - provide_vehicle_condition
+  - provide_vehicle_mileage
 
 responses:
   utter_greet:
@@ -77,6 +81,13 @@ responses:
     - text: "Dạ không có gì, hãy liên hệ tôi nếu bạn cần hỗ trợ thêm nhé!"
     - text: "Rất vui vì đã được hỗ trợ bạn, hãy liên hệ tôi nếu cần giúp đỡ thêm nhé!"
 
+  utter_ask_vehicle_name:
+    - text: "Vui lòng cung cấp tên xe."
+  utter_ask_vehicle_condition:
+    - text: "Vui lòng cung cấp độ mới của xe."
+  utter_ask_vehicle_mileage:
+    - text: "Vui lòng cung cấp số km đã chạy."
+
 entities:
   - color
   - version
@@ -89,6 +100,9 @@ entities:
   - type
   - maxprice 
   - vehicle_information
+  - vehicle_name
+  - vehicle_condition
+  - vehicle_mileage
 
 slots:
   color:
@@ -167,6 +181,25 @@ slots:
     mappings:
       - type: from_entity
         entity: vehicle_information
+  vehicle_name:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: vehicle_name
+  vehicle_condition:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: vehicle_condition
+  vehicle_mileage:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: vehicle_mileage
+  requested_slot:
+    type: text
+    mappings:
+      - type: from_text
 
 actions:
   - action_check_slots
@@ -175,6 +208,13 @@ actions:
   - action_confirm_vehicle_information
   - action_thank_for_waiting
   - action_search_vehicle_db
+  - action_ask_vehicle_name
+  - action_ask_vehicle_condition
+  - action_ask_vehicle_mileage
+  - action_estimate_vehicle_price
+  - validate_vehicle_form
+
+
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

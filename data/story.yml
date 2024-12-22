@@ -10,3 +10,17 @@ stories:
       - intent: deny
       - action: action_confirm_vehicle_information
       - action: action_search_vehicle_db
+
+- story: request_vehicle_price
+  steps:
+      - intent: request_vehicle_price
+      - action: action_ask_vehicle_name
+      - intent: provide_vehicle_name
+      - action: validate_vehicle_form
+      - action: action_ask_vehicle_condition
+      - intent: provide_vehicle_condition
+      - action: validate_vehicle_form
+      - action: action_ask_vehicle_mileage
+      - intent: provide_vehicle_mileage
+      - action: validate_vehicle_form
+      - action: action_estimate_vehicle_price

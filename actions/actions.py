@@ -31,6 +31,12 @@ from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet
+
+import joblib
+import pandas as pd
+from rasa_sdk import Action, Tracker
+from rasa_sdk.executor import CollectingDispatcher
+from rasa_sdk.events import SlotSet, FollowupAction
     
 class ActionSearchVehicleDb(Action):
 
@@ -77,7 +83,7 @@ class ActionSearchVehicleDb(Action):
                 'SERVER=localhost;'
                 'DATABASE=QLBANXE;'
                 'UID=sa;'
-                'PWD=kc'
+                'PWD=2710'
             )
             cursor = conn.cursor()
 
@@ -259,3 +265,94 @@ class ActionResetSlots(Action):
         
         return reset_events
 
+class ActionAskVehicleName(Action):
+
+    def name(self) -> str:
+        return "action_ask_vehicle_name"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: dict) -> list:
+        
+        dispatcher.utter_message(text="Vui lòng cung cấp tên xe.")
+        return [SlotSet("requested_slot", "vehicle_name")]
+
+class ActionAskVehicleCondition(Action):
+
+    def name(self) -> str:
+        return "action_ask_vehicle_condition"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: dict) -> list:
+        
+        dispatcher.utter_message(text="Vui lòng cung cấp độ mới của xe.")
+        return [SlotSet("requested_slot", "vehicle_condition")]
+
+class ActionAskVehicleMileage(Action):
+
+    def name(self) -> str:
+        return "action_ask_vehicle_mileage"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: dict) -> list:
+        
+        dispatcher.utter_message(text="Vui lòng cung cấp số km đã chạy.")
+        return [SlotSet("requested_slot", "vehicle_mileage")]
+
+class ValidateVehicleForm(Action):
+
+    def name(self) -> str:
+        return "validate_vehicle_form"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: dict) -> list:
+        
+        requested_slot = tracker.get_slot("requested_slot")
+        
+        if requested_slot == "vehicle_name":
+            vehicle_name = tracker.latest_message.get('text')
+            return [SlotSet("vehicle_name", vehicle_name), FollowupAction("action_ask_vehicle_condition")]
+        
+        elif requested_slot == "vehicle_condition":
+            vehicle_condition = tracker.latest_message.get('text')
+            return [SlotSet("vehicle_condition", vehicle_condition), FollowupAction("action_ask_vehicle_mileage")]
+        
+        elif requested_slot == "vehicle_mileage":
+            vehicle_mileage = tracker.latest_message.get('text')
+            return [SlotSet("vehicle_mileage", vehicle_mileage), FollowupAction("action_estimate_vehicle_price")]
+        
+        return []
+
+class ActionEstimateVehiclePrice(Action):
+
+    def name(self) -> str:
+        return "action_estimate_vehicle_price"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: dict) -> list:
+        
+        # Lấy giá trị từ các slot
+        vehicle_name = tracker.get_slot('vehicle_name')
+        vehicle_condition = tracker.get_slot('vehicle_condition')
+        vehicle_mileage = tracker.get_slot('vehicle_mileage')
+        
+        # Chuyển đổi dữ liệu đầu vào thành định dạng phù hợp
+        input_data = {
+            'vehicle_condition': [int(vehicle_condition)],
+            'vehicle_mileage': [int(vehicle_mileage)],
+            f'vehicle_name_{vehicle_name}': [1]
+        }
+        input_df = pd.DataFrame(input_data).reindex(columns=['vehicle_condition', 'vehicle_mileage', 'vehicle_name_future', 'vehicle_name_winner x', 'vehicle_name_vision', 'vehicle_name_sh', 'vehicle_name_sh mode', 'vehicle_name_exciter', 'vehicle_name_raider'], fill_value=0)
+        
+        # Tải mô hình đã huấn luyện
+        model = joblib.load('vehicle_price_model.pkl')
+        
+        # Dự đoán giá xe
+        estimated_price = model.predict(input_df)[0]
+        
+        dispatcher.utter_message(text=f"Giá ước tính cho xe {vehicle_name} với độ mới {vehicle_condition}% và số km đã chạy {vehicle_mileage} là {estimated_price:.2f} triệu đồng.")
+        return []
