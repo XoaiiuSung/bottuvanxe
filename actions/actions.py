@@ -26,6 +26,7 @@
 #
 #         return []
 import pyodbc
+import re
 from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
@@ -58,7 +59,7 @@ class ActionSearchVehicleDb(Action):
         vehicle_links = self.query_vehicle_db(color, brand, spec, brake_type, version, model, fuelConsumption, warranty, maxprice, vehicle_type)
 
         if vehicle_links:
-            dispatcher.utter_message(text=f"Bạn muốn tìm xe với các thông tin sau: {vehicle_links}")
+            dispatcher.utter_message(text=f"Tôi tìm được những xe sau phù hợp với yêu cầu của bạn: {vehicle_links}")
         else:
             dispatcher.utter_message(text="Không tìm thấy xe nào phù hợp với thông tin bạn cung cấp.")
 
@@ -66,6 +67,10 @@ class ActionSearchVehicleDb(Action):
 
     def query_vehicle_db(self, color, brand, spec, brake_type, version, model, fuelConsumption, warranty, maxprice, vehicle_type):
         try:
+            # Convert spec from '125 phân khối' to '125'
+            if spec:
+                spec = re.sub(r'(\d+)\s?phân khối', r'\1', spec, flags=re.IGNORECASE)
+
             # Kết nối tới db
             conn = pyodbc.connect(
                 'DRIVER={ODBC Driver 17 for SQL Server};'
@@ -94,9 +99,9 @@ class ActionSearchVehicleDb(Action):
                 # Format the results as needed
                 links = []
                 for result in results:
-                    link = f"http://localhost:3000/{result.MaLoai}/{result.MaXe}-{result.MaPhienBan}?color={result.MaMau}"
+                    link = f"<li><a className='text-light' href='http://localhost:3000/{result.MaLoai}/{result.MaXe}-{result.MaPhienBan}?color={result.MaMau}' target='_blank' rel='noopener noreferrer'>{result.TenXe}</a></li>"
                     links.append(link)
-                return "; ".join(links)
+                return "<ul>" + "".join(links) + "</ul>"
             else:
                 print("No vehicles found.")
                 return None

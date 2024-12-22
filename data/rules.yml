@@ -26,3 +26,8 @@ rules:
   steps:
   - intent: search_vehicle
   - action: utter_search_vehicle
+
+- rule: response to thank
+  steps: 
+  - intent: thank
+  - action: 

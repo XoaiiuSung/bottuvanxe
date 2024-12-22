@@ -73,6 +73,10 @@ responses:
     - text: "Bạn có thể cung cấp thêm thông tin về mẫu xe bạn đang quan tâm không?"
     - text: "Bạn đang tìm mua xe gì? Chia sẻ thêm để tôi hỗ trợ nhé!"
     - text: "Vui lòng cho tôi biết thêm thông tin về chiếc xe bạn muốn tìm ạ."
+  
+  utter_response_thank:
+    - text: "Dạ không có gì, hãy liên hệ tôi nếu bạn cần hỗ trợ thêm nhé!"
+    - text: "Rất vui vì đã được hỗ trợ bạn, hãy liên hệ tôi nếu cần giúp đỡ thêm nhé!"
 
 entities:
   - color

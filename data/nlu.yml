@@ -203,6 +203,18 @@ nlu:
     - tôi cần tư vấn
     - tôi cần hỗ trợ mua xe
 
+- intent: thank
+  examples: |
+    - cảm ơn
+    - cảm ơn bạn
+    - cảm ơn nhiều
+    - cảm ơn rất nhiều
+    - cảm ơn bạn nhiều
+    - cảm ơn bạn rất nhiều
+    - cảm ơn bạn nhiều lắm
+    - cảm ơn bạn rất nhiều lắm
+    - cảm ơn nha
+    - cảm ơn bạn nha
 
 - intent: goodbye
   examples: |
@@ -566,20 +578,20 @@ nlu:
     - Tôi đang tìm dòng xe [raider](model).
     - Tôi thích xe dòng [raider](model).
     - Tôi muốn mua xe [raider](model).
-    - Tôi muốn xe có [bảo hành 1 năm](warranty).
-    - Tôi cần xe với [bảo hành 2 năm](warranty).
+    - Tôi muốn xe có bảo hành [1 năm](warranty).
+    - Tôi cần xe với bảo hành [2 năm](warranty).
     - Tôi thích xe được bảo hành [1 năm](warranty).
-    - Xe tôi muốn phải có [bảo hành 2 năm](warranty).
-    - Tôi muốn xe có [bảo hành 1 năm](warranty).
-    - Tôi cần xe với [bảo hành 2 năm](warranty).
+    - Xe tôi muốn phải có bảo hành [2 năm](warranty).
+    - Tôi muốn xe có bảo hành [1 năm](warranty).
+    - Tôi cần xe với bảo hành [2 năm](warranty).
     - Tôi thích xe được bảo hành [1 năm](warranty).
-    - Xe tôi muốn phải có [bảo hành 2 năm](warranty).
-    - Tôi muốn mua xe có [bảo hành 1 năm](warranty).
-    - Tôi đang tìm xe với [bảo hành 2 năm](warranty).
-    - Tôi cần một chiếc xe có [bảo hành 1 năm](warranty).
+    - Xe tôi muốn phải có bảo hành [2 năm](warranty).
+    - Tôi muốn mua xe có bảo hành [1 năm](warranty).
+    - Tôi đang tìm xe với bảo hành [2 năm](warranty).
+    - Tôi cần một chiếc xe có bảo hành [1 năm](warranty).
     - Tôi muốn xe được bảo hành [2 năm](warranty).
-    - Tôi thích xe có [bảo hành 2 năm](warranty).
-    - Tôi muốn xe có thời gian [bảo hành 1 năm](warranty).
+    - Tôi thích xe có bảo hành [2 năm](warranty).
+    - Tôi muốn xe có thời gian bảo hành [1 năm](warranty).
     - Tôi muốn [xe tay ga](type).
     - Tôi cần [xe côn tay](type).
     - Tôi đang tìm [xe số](type).
