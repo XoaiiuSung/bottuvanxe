@@ -19,7 +19,7 @@ rules:
 
 - rule: Reset slots
   steps:
-    - intent: reset_slots
+    - intent: ask_for_another_vehicle
     - action: action_reset_slots
 
 - rule: Respond to search_vehicle intent
@@ -30,4 +30,4 @@ rules:
 - rule: response to thank
   steps: 
   - intent: thank
-  - action: 
+  - action: utter_response_thank

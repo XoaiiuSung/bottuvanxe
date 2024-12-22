@@ -254,7 +254,8 @@ class ActionResetSlots(Action):
         # Tạo danh sách các sự kiện để đặt lại giá trị của các slot về None
         reset_events = [SlotSet(slot, None) for slot in slots]
         
-        dispatcher.utter_message(text="Tôi đã xóa hết thông tin hiện tại. Hãy cung cấp lại thông tin cho tôi.")
+        dispatcher.utter_message(text="Dạ bạn muốn tư vấn về mẫu xe nào khác ạ?")
+        dispatcher.utter_message(text="Bạn vui lòng cung cấp thông tin mẫu xe để tôi có thể tìm kiếm thông tin phù hợp nhất với yêu cầu của bạn nhé.")
         
         return reset_events
 

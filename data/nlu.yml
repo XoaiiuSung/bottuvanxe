@@ -265,6 +265,16 @@ nlu:
     - rất tốt
     - rất hoàn hảo
 
+- intent: ask_for_another_vehicle
+  examples: |
+    - cho tôi xem một chiếc xe khác được không
+    - tôi muốn xem một chiếc xe khác
+    - tôi muốn xem một mẫu xe khác
+    - tôi muốn tham khảo mẫu xe khác
+    - xe này không hợp, tôi muốn xem chiếc khác
+    - tôi muốn chuyển sang xem mẫu khác,
+    - tôi muốn xem một chiếc xe khác
+
 - intent: bot_challenge
   examples: |
     - bạn có phải là bot không?
