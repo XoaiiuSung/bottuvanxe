@@ -321,6 +321,7 @@ nlu:
     - Tôi muốn mua một chiếc xe sang
     - Bạn có thể tư vấn xe cho tôi không?
 
+# intent để reset lại slot trong input cũ
 - intent: reset_slots
   examples: |
     - tôi muốn thêm thông tin lại từ đầu
